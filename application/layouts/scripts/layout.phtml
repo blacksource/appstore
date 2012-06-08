@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<?php echo $this->headTitle(); ?>
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+
+	<script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="header-bgd">
+		<div class="header">
+			<div class="logo">
+				<a href="/index.html" class="logo">logo</a>
+			</div><!--logo end-->
+			<div class="search-top-box">
+				<div class="search-top">
+					<form action="/soft/soft!search.action" name="search">
+						<input name="keywords" value="" type="text" class="textarea">
+						<input name="" type="submit" class="search" value="搜 索">
+					</form>
+				</div><!--search-top end-->
+			</div><!--search-top-box end-->
+			<div class="top-login-box">
+				<div class="top-login">
+					<!--
+					<span id="span-nologin">
+						<a href="#login" class="login">登录</a>
+						<a href="/soft/register!show.action" class="reg">注册</a>
+					</span>
+					<span id="span-login" class="login"></span>
+					<br>
+					-->
+					<a href="#" onclick="setHome(this,document.location.href);return false;">设为首页</a>   
+					<a href="#" onclick="addBookmark('安丰网',document.location.href);return false;">添加收藏</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="nav-bgd">
+		<div class="nav-box">
+			<ul class="nav">
+				<span class="splitline">|</span>
+				<li><a href="/index.html">首页</a></li>
+				<li><a href="/topic_5_1.html" class="<?php echo $this->category_type=='topic'?'current':''?>">专题</a></li>
+				<li><a href="/app_4_1.html" class="<?php echo $this->category_type=='app'?'current':''?>">应用</a></li>
+				<li><a href="/game_14_1.html" class="<?php echo $this->category_type=='game'?'current':''?>">游戏</a></li>
+			</ul>
+		</div>
+	</div>
+	<?php echo $this->layout()->content; ?>
+
+	<ul class="footer">
+		<li><a href="/index.html">首页</a></li>
+		<li><a href="/topic_5_1.html">专题</a></li>
+		<li><a href="/app_4_1.html">应用</a></li>
+		<li><a href="/game_14_1.html">游戏</a></li>
+		<li><a href="/soft/soft!contact">联系我们</a></li>
+	</ul>
+
+	<p class="copyright">Copyright (c) appstore.com All rights reserved.
+	</p>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<?php
+	$this->headTitle($this->app->name.'|安卓市场|Android应用下载');
+?>
+<script src="http://wandoujia.com/api/wdapi.js" type="text/javascript"></script>
+<div class="content-box">
+	<div class="column-w">
+		<ul class="qnav">
+			<li><a href="/index.html">首页</a> &gt;</li>
+			<li><?php echo $this->category->parent_name?>&gt;</li>
+			<li><?php echo $this->category->name ?>&gt;</li>
+			<li><?php echo $this->app->name?></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="content-box">
+	<div class="column-lw-box">
+		<div class="column-lw">
+			<div class="brief">
+				<div class="down">
+					<img src="/qrcode/32195.jpg"><br>
+					<a target="_blank" href="/qr.html">二维码下载说明</a>
+					<p><a href="/download/<?php echo $this->app->id?>"><img src="/images/btn_down.png"></a></p>
+					<p><a href="http://127.0.0.1/download/<?php echo $this->app->id ?>" name="<?php echo $this->app->name ?>" onclick="return wdapi_apkdl_m(this,'anfone');" title="通过豌豆荚下载"><img alt="豌豆荚一键安装" src="/images/btn_wdj.png"></a></p>
+				</div>
+				<ul class="title">
+					<p class="icon"><img src="<?php echo $this->app->logo?>"></p>
+					<li class="h1"><?php echo $this->app->name ?></li>
+					<li><i class="df-star star-<?php echo $this->app->star?>"></i></li>
+				</ul>
+				<ul class="info">
+					<li><strong>软件作者：</strong><?php echo $this->app->developer ?></li>
+					<li><strong>软件资费：</strong>免费软件</li>
+					<li><strong>软件语言：</strong><?php echo $this->app->language ?></li>
+					<li><strong>软件版本：</strong><?php echo $this->app->version ?></li>
+					<li><strong>软件大小：</strong><?php echo $this->app->size ?></li>
+					<li><strong>下载次数：</strong><?php echo $this->app->download_times ?></li>
+					<li><strong>上架时间：</strong><?php echo substr($this->app->created_at, 0, 10) ?></li>
+					<li>  
+						<div id="ckepop">
+							<strong class="jiathis jiathis_txt">分享到：</strong>
+							<a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jiathis_separator jtico jtico_qzone">QQ空间</span></a>
+							<a class="jiathis_button_tsina" title="分享到新浪微博"><span class="jiathis_txt jiathis_separator jtico jtico_tsina">新浪微博</span></a>
+							<a class="jiathis_button_kaixin001" title="分享到开心网"><span class="jiathis_txt jiathis_separator jtico jtico_kaixin001">开心网</span></a>
+							<a class="jiathis_button_renren" title="分享到人人网"><span class="jiathis_txt jiathis_separator jtico jtico_renren">人人网</span></a>
+							<a href="http://www.jiathis.com/share/" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank">更多...</a>
+						</div>
+					</li>
+				</ul>
+				<h6>屏幕截图：</h6>
+				<div class="bd" style="overflow:hidden;">
+					<div class="soft_img" style="width: 1230px; margin-left: -420px; ">
+						<?php foreach($this->imgs as $img){ ?>
+						<a href="<?php echo $img->img_path ?>" style="float: left; display: block; padding-left:10px;"><img src="<?php echo $img->img_path ?>" width="200" height="300"></a>
+						<?php } ?>
+					</div>
+				</div>
+				<h6>应用介绍：</h6>
+					<?php echo $this->app->description ?>
+				<div class="clear"></div>
+				<!--评论功能正在开发中
+				<div class="comment">
+					<h1><a href="#comment" class="write">发表评论</a>用户评论：</h1>
+					<div id="comment-content">
+					</div>
+				</div>
+				<ul class="pagebar" id="comment-page" style="display:none;">
+				</ul>
+				-->
+			</div>
+		</div>
+	</div><!--column-lw & column-lw-box end-->
+	<div class="column-r-box">
+		<div class="column-r">
+			<h2>其它版本</h2>
+			<ul class="sort-r">
+				<?php foreach ($this->otherVersions as $other) { ?>
+					<li>
+						<a href="/app/<?php echo $other->id?>"><span class="icon"><img src="<?php echo $other->logo?>" width="52" height="51"></span><?php echo $other->name.' '.$other->version?></a>
+					</li>
+				<?php } ?>
+			</ul>
+		</div>
+		<div class="column-r">
+			<h2>猜你喜欢</h2>
+			<ul class="sort-r">
+				<?php foreach ($this->relateds as $related) { ?>
+					<li>
+						<a href="/app/<?php echo $related->id?>"><span class="icon"><img src="<?php echo $related->logo?>" width="52" height="51"></span><?php echo $related->name ?></a>
+					</li>
+				<?php } ?>
+			</ul>
+		</div>
+		<div class="column-r">
+			<h3>精品推荐</h3>
+			<ul class="sort-r">
+				<?php foreach ($this->recommends as $recommend) { ?>
+					<li><a href="/app/<?php echo $recommend->app_id?>"><span class="icon"><img src="<?php echo $recommend->logo?>" width="52" height="51"></span><?php echo $recommend->name?> </a></li>
+				<?php } ?>
+			</ul>
+			<div class="clear"></div>
+		</div><!--column-r end-->
+	</div>
+</div>
