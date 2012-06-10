@@ -56,6 +56,7 @@ CREATE TABLE `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type_name` varchar(20) NOT NULL,
   `name` varchar(20) NOT NULL,
+  `english_name` varchar(20) DEFAULT NULL,
   `parent_id` int(11) NOT NULL,
   `icon` varchar(50) DEFAULT NULL,
   `app_count` int(11) DEFAULT NULL,
@@ -70,18 +71,18 @@ CREATE TABLE `categories` (
 --
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO categories(id, type_name, name, parent_id, app_count, created_at)
-VALUES(1, 'android', '专题', 0, 0, now());
-INSERT INTO categories(id, type_name, name, parent_id, app_count, created_at)
-VALUES(2, 'android', '应用', 0, 0, now());
-INSERT INTO categories(id, type_name, name, parent_id, app_count, created_at)
-VALUES(3, 'android', '游戏', 0, 0, now());
-INSERT INTO categories(id, type_name, name, parent_id, app_count, created_at)
-VALUES(11, 'iphone', '专题', 0, 0, now());
-INSERT INTO categories(id, type_name, name, parent_id, app_count, created_at)
-VALUES(12, 'iphone', '应用', 0, 0, now());
-INSERT INTO categories(id, type_name, name, parent_id, app_count, created_at)
-VALUES(13, 'iphone', '游戏', 0, 0, now());
+INSERT INTO categories(id, type_name, name, english_name, parent_id, app_count, created_at)
+VALUES(1, 'android', '专题', 'topic', 0, 0, now());
+INSERT INTO categories(id, type_name, name, english_name, parent_id, app_count, created_at)
+VALUES(2, 'android', '应用', 'app', 0, 0, now());
+INSERT INTO categories(id, type_name, name, english_name, parent_id, app_count, created_at)
+VALUES(3, 'android', '游戏', 'game', 0, 0, now());
+INSERT INTO categories(id, type_name, name, english_name, parent_id, app_count, created_at)
+VALUES(11, 'iphone', '专题', 'topic', 0, 0, now());
+INSERT INTO categories(id, type_name, name, english_name, parent_id, app_count, created_at)
+VALUES(12, 'iphone', '应用', 'app', 0, 0, now());
+INSERT INTO categories(id, type_name, name, english_name, parent_id, app_count, created_at)
+VALUES(13, 'iphone', '游戏', 'game', 0, 0, now());
 
 INSERT INTO categories(id, type_name, name, parent_id, app_count, created_at)
 VALUES(101, 1, '装机必备', 1, 23425, now());

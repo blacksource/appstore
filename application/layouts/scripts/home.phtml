@@ -1,6 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="Keywords" content="安卓游戏,安卓软件,安卓系统,安卓游戏下载,安卓,android">
+	<meta name="Description" content="网易应用提供免费安卓(android)游戏,安卓游戏软件下载、安卓工具下载。包括安卓手机游戏、安卓3D游戏、安卓手机应用、安卓刷机工具、安卓铃声壁纸等应用下载。">
 	<?php echo $this->headTitle(); ?>
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
@@ -8,7 +10,8 @@
 	<script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
 </head>
 <body>
-	<?php echo $this->partial('header.phtml', array('type_name'=>$this->type_name, 'category_type'=>$this->category_type)); ?>
+	<?php echo $this->partial('header.phtml', array('type_name'=>$this->type_name)); ?>
+	<?php echo $this->partial('ads.phtml'); ?>
 	<?php echo $this->layout()->content; ?>
 	<?php echo $this->partial('links.phtml'); ?>
 	<?php echo $this->partial('footer.phtml'); ?>

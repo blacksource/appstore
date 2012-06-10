@@ -2,38 +2,23 @@
 
 class CategoryController extends Zend_Controller_Action
 {
-    public $category_type1 = "aaaaa";
-
     public function init()
     {
         /* Initialize action controller here */
     }
 
     public function indexAction()
-    {
+    {       
         $this->view->type_name =$this->_request->getParam('type_name');
         $category_id = $this->_request->getParam('category_id');
         $page = $this->_request->getParam('page') == "" ? 1 : $this->_request->getParam('page');
         $pageSize = 2;
         $this->view->category_type = $this->_request->getParam('category');
 
-        switch ($this->view->category_type) {
-        	case 'app':
-        		$parent_category_id = 1;
-        		break;
-       		case 'game':
-        		$parent_category_id = 2;
-        		break;
-        	case 'topic':
-        		$parent_category_id = 3;
-        		break;
-        	default:
-        		# code...
-        		break;
-        }
 		// get categories which parent_id is the same with $category_id	   	
         $categories = new Application_Model_DbTable_Categories();
-        $this->view->categories = $categories->getByParentId($parent_category_id);
+        $this->view->categories = $categories->getByParentEnglishName($this->view->type_name, $this->view->category_type);
+
         if(count($this->view->categories) == 0)
         {
             return;
@@ -74,7 +59,6 @@ class CategoryController extends Zend_Controller_Action
                 } catch (Exception $e) {
                     echo $e;
                 }
-
 
                 echo 'save success category_id='.$category_id;
             }

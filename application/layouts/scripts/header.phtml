@@ -1,0 +1,52 @@
+<div class="header-bgd">
+	<div class="header">
+		<div class="logo">
+			<a href="/index.html" class="logo">logo</a>
+		</div><!--logo end-->
+		<div class="search-top-box">
+			<div class="search-top">
+				<form action="/soft/soft!search.action" name="search">
+					<input name="keywords" value="" type="text" class="textarea">
+					<input name="" type="submit" class="search" value="搜 索">
+				</form>
+			</div><!--search-top end-->
+		</div><!--search-top-box end-->
+		<div class="top-login-box">
+			<div class="top-login">
+				<!--
+				<span id="span-nologin">
+					<a href="#login" class="login">登录</a>
+					<a href="/soft/register!show.action" class="reg">注册</a>
+				</span>
+				<span id="span-login" class="login"></span>
+				<br>
+				-->
+				<a href="#" onclick="setHome(this,document.location.href);return false;">设为首页</a>   
+				<a href="#" onclick="addBookmark('安丰网',document.location.href);return false;">添加收藏</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="nav-box">
+	<ul class="nav_new">
+		<li class="<?php echo $this->type_name=='android'?'active':''?>"><a href="/android.html">Android</a></li>
+		<li class="<?php echo $this->type_name=='iphone'?'active':''?>"><a href="/iphone.html">iPhone</a></li>
+	</ul>
+</div>
+<div class="nav-bgd">
+	<div class="nav-box">
+		<ul class="nav_new">
+			<span class="splitline">|</span>
+			<li  class="<?= $this->category_type==''?'current':''?>"><a href="/">首页</a></li>
+			<li class="<?= $this->category_type=='topic'?'current':''?>">
+				<a href="<?= '/'.$this->type_name.'/topic.html'?>">专题</a>
+			</li>
+			<li class="<?= $this->category_type=='app'?'current':''?>">
+				<a href="<?= '/'.$this->type_name.'/app.html'?>">应用</a>
+			</li>
+			<li class="<?= $this->category_type=='game'?'current':''?>">
+				<a href="<?= '/'.$this->type_name.'/game.html'?>">游戏</a>
+			</li>
+		</ul>
+	</div>
+</div>

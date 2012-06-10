@@ -1,3 +1,6 @@
+<?php 
+	$this->headTitle("美眉安卓(Android)应用市场 美眉iPhone应用市场");
+?>
 <div class="content-box">
 	<div class="column-w">
 		<div class="qnav">
@@ -27,7 +30,7 @@
 						<li>
 							<dl>
 								<dt>
-									<a href="<?php echo '/app/'.$app->id.'.html'?>" title="<?php echo $app->name?>"><? echo $app->name ?></a><span>(<?php echo $app->version ?>)</span><span style="color:#e69801;font-weight:bold;"></span><i class="df-star star-<?php echo $app->star?>"></i>
+									<a href="<?php echo '/'.$this->type_name.'/app/'.$app->id.'.html'?>" title="<?php echo $app->name?>"><? echo $app->name ?></a><span>(<?php echo $app->version ?>)</span><span style="color:#e69801;font-weight:bold;"></span><i class="df-star star-<?php echo $app->star?>"></i>
 								</dt>
 								<dd class="intro">
 									<?php echo mb_strlen($app->description,'utf-8') > 100 ? mb_substr($app->description,0,100,'utf-8').'...': $app->description; ?> 
@@ -76,44 +79,3 @@
 		</div>
 	</div><!--column-r end-->
 </div>
-
-
-
-
-<style type="text/css">
-	/*=================精品推荐================*/
-.m_abox{ margin-left:0;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
-/*m_ptype*/
-.m_ptype{ /*min-height:600px;_height:600px;*/ zoom:1}
-.m_ptype li{ padding:10px 100px 15px 90px; zoom:1;  position:relative; margin:1px 0; vertical-align:middle; min-height:76px; margin:10px 15px; border:#FFF 1px solid;border-bottom:1px dotted #dcdcdc; overflow:hidden; width:390px;_width:385px; height:105px;}
-.m_ptype li:hover{ background:#e6f8c3;-webkit-border-radius:5px;-moz-border-radius:5px;-khtml-border-radius:5px;border-radius:5px; border:#b9ce93 1px solid;}/*选中*/
-.m_ptype .m_pic{ position:absolute; left:20px; top:15px;}
-.m_ptype .m_tyr{ position:absolute; right:25px; top:30px;  color:#535353}
-.m_ptype .m_tyr p{ margin-top:5px;}
-.m_ptype dt{ font-size:13px; line-height:2; height:30px;}
-.m_ptype dt a{ font-weight:700; height:25px; overflow:hidden; float:left; font-size:15px;}
-.m_ptype dt span{ color:#959595; margin-left:10px; line-height:32px;}
-.boxmanage_itemM dt span{ color:#959595; margin-left:10px; line-height:32px;font-weight:normal;}
-.m_ptype dd{ color:#535353; margin:2px;}
-.m_ptype dd em{ float:left; text-align:left; overflow:hidden; height:18px; }
-.m_ptype dd em a{color:#535353;}
-.m_ptype dd span{  float:right; width:200px; margin-right:-10px; text-align:right; width:195px; height:16px; *height:13px; height:13px\0; overflow:hidden;}
-.m_ptype dd.intro{ color:#959595; line-height:18px; width:450px; height:60px; overflow:hidden; }
-
-
-/*m_page*/
-.m_page{ text-align:center; width:100%;}/*update by panda 11-02-24*/
-	.m_page .m_num a.on{ border:1px solid #aad83e; font-weight:700; color:#fff; background-position:0 -18px; margin:0 5px;}
-	
-.paging{text-align:center; padding:10px 0px 14px 0;}
-	.paging a{ display:inline-block; margin:0 0px; width:26px; height:15px; text-align:center;color:#434343}
-	.paging a:hover{ color:#96c427}
-	.paging a.stop{ background:#ececec; color:#999; cursor:default}
-	.paging .curpage a { font-weight:700; color:#fff; background:url(http://images.sc.hiapk.com/Themes/Default_1/Images/page_num.jpg) no-repeat;margin:0 5px; width:38px; height:15px;}
-.paging span.page_s,.paging .pagebar_btn_goto{ background:url(http://images.sc.hiapk.com/Themes/Default_1/Images/page_span.jpg) no-repeat; width:47px; height:22px; text-align:center; line-height:22px; display:inline-block;}
-.paging span.page_s a{ width:47px;}
-.paging .pagebar_btn_goto{ border:0;}
-
-.nodata{ text-align:center; font-size:16px; padding:20px;  color:#535353; }
-
-</style>
