@@ -10,12 +10,18 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+        $this->render('android');
+        $this->view->type_name = "android";
     }
 
-    public function helloAction()
+    public function iphoneAction()
     {
-    	
+        $this->view->type_name = $this->getRequest()->getActionName();   
+    }
+
+    public function androidAction()
+    {
+        $this->view->type_name = $this->getRequest()->getActionName();
     }
 }
 

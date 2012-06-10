@@ -46,7 +46,7 @@
 				<div class="m_page mt20">
 					<div class="paging">
 						<span title="第一页" class="page_s">
-							<?php $pre_url = '/'.$this->category_type.'_'.$this->category_id.'_'?>
+							<?php $pre_url = '/'.$this->type_name.'/'.$this->category_type.'_'.$this->category_id.'_'?>
 							<?php echo $this->currentPage==1 ? "上一页": "<a href='".$pre_url.($this->currentPage-1).".html'>上一页</a>"?>
 						</span>&nbsp;
 						<?php for ($i=1; $i <= $this->totalPage; $i++) { ?> 
@@ -69,7 +69,7 @@
 			<ul class="sort-r font14">
 				<?php foreach ($this->categories as $category) { ?>
 					<li>
-						<a href="<?php echo '/'.$this->category_type.'_'.$category->id.'_1.html'?>"><?php echo $category->name?></a>
+						<a href="<?php echo '/'.$this->type_name.'/'.$this->category_type.'_'.$category->id.'_1.html'?>"><?php echo $category->name?></a>
 					</li>
 				<?php } ?>
 			</ul>

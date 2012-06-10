@@ -22,11 +22,24 @@ from categories c1, categories c2 where c1.parent_id = c2.id and c1.id = 4
 */
     }
 
-    public function getByParentId($id)
+    public function getByParentId($parent_id)
     {
         $select = $this->select()
-                    ->where('parent_id=?', $id);
+                    ->where('parent_id=?', $parent_id);
+       return $this->fetchAll($select);
+    }
+
+    public function getAll()
+    {
+        $select = $this->select()
+                       ->from(array('c'=> 'categories'), array('id','type_name', 'name'))
+                       ->order('type_name');
         return $this->fetchAll($select);
+    }
+
+    public function save($category)
+    {
+        return $this->insert($category);
     }
 }
 

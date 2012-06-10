@@ -5,7 +5,7 @@ class Application_Model_DbTable_Apps extends Zend_Db_Table_Abstract
 
     protected $_name = 'apps';
 
-    public function getApp($id)
+    public function getById($id)
     {
         $select = $this->select()
             ->where('id=?', $id);
@@ -43,7 +43,7 @@ class Application_Model_DbTable_Apps extends Zend_Db_Table_Abstract
         $this->update($data, 'id='.$id);
     }
 
-    public function add($app)
+    public function save($app)
     {
         return $this->insert($app);
     }

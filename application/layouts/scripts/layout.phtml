@@ -36,14 +36,21 @@
 			</div>
 		</div>
 	</div>
+	<div class="nav-box">
+		<ul class="nav">
+			<li class="<?php echo $this->type_name=='android'?'active':''?>"><a href="/android.html">Android</a></li>
+			<li class="<?php echo $this->type_name=='iphone'?'active':''?>"><a href="/iphone.html">iPhone</a></li>
+		</ul>
+	</div>
 	<div class="nav-bgd">
+		
 		<div class="nav-box">
 			<ul class="nav">
 				<span class="splitline">|</span>
-				<li><a href="/index.html">首页</a></li>
-				<li><a href="/topic_5_1.html" class="<?php echo $this->category_type=='topic'?'current':''?>">专题</a></li>
-				<li><a href="/app_4_1.html" class="<?php echo $this->category_type=='app'?'current':''?>">应用</a></li>
-				<li><a href="/game_14_1.html" class="<?php echo $this->category_type=='game'?'current':''?>">游戏</a></li>
+				<li><a href="/">首页</a></li>
+				<li><a href="<?php echo '/'.$this->type_name.'/topic.html'?>" class="<?php echo $this->category_type=='topic'?'current':''?>">专题</a></li>
+				<li><a href="<?php echo '/'.$this->type_name.'/app.html'?>" class="<?php echo $this->category_type=='app'?'current':''?>">应用</a></li>
+				<li><a href="<?php echo '/'.$this->type_name.'/game.html'?>" class="<?php echo $this->category_type=='game'?'current':''?>">游戏</a></li>
 			</ul>
 		</div>
 	</div>

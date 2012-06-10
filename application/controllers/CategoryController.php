@@ -11,11 +11,11 @@ class CategoryController extends Zend_Controller_Action
 
     public function indexAction()
     {
+        $this->view->type_name =$this->_request->getParam('type_name');
         $category_id = $this->_request->getParam('category_id');
-        $page = $this->_request->getParam('page');
+        $page = $this->_request->getParam('page') == "" ? 1 : $this->_request->getParam('page');
         $pageSize = 2;
         $this->view->category_type = $this->_request->getParam('category');
-        $this->view->category_id = $category_id;
 
         switch ($this->view->category_type) {
         	case 'app':
@@ -31,10 +31,18 @@ class CategoryController extends Zend_Controller_Action
         		# code...
         		break;
         }
-		
 		// get categories which parent_id is the same with $category_id	   	
         $categories = new Application_Model_DbTable_Categories();
         $this->view->categories = $categories->getByParentId($parent_category_id);
+        if(count($this->view->categories) == 0)
+        {
+            return;
+        }
+        if("" == $category_id)
+        {
+            $category_id = $this->view->categories->current()->id;            
+        }
+        $this->view->category_id = $category_id;
         $this->view->category = $categories->getById($category_id);
 
         // get apps which category equal $category_id
@@ -44,6 +52,33 @@ class CategoryController extends Zend_Controller_Action
         
         $this->view->totalPage = ceil($app_count/$pageSize);
         $this->view->currentPage = $page;
+    }
+
+    public function addAction()
+    {
+        $this->_helper->layout->setLayout('admin');
+        $form = new Application_Form_Category();
+        $this->view->form = $form;
+
+        if($this->getRequest()->isPost())
+        {
+            $formData = $this->getRequest()->getPost();
+            if ($form->isValid($formData)) 
+            {
+                $category = $form->getValues();
+                $categories = new Application_Model_DbTable_Categories();
+
+                try {
+                $category_id = $categories->save($category);
+                    
+                } catch (Exception $e) {
+                    echo $e;
+                }
+
+
+                echo 'save success category_id='.$category_id;
+            }
+        }
     }
 }
 

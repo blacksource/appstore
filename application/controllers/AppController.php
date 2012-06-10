@@ -18,7 +18,7 @@ class AppController extends Zend_Controller_Action
     	$id = $this->_request->getParam('id');
         
         $apps = new Application_Model_DbTable_Apps();
-        $this->view->app = $apps->getApp($id);
+        $this->view->app = $apps->getById($id);
         $category_id = $this->view->app->category_id;
         $this->view->otherVersions = $apps->getByName($this->view->app->name);
         $this->view->relateds = $apps->getRelatedsByCategory($category_id);
@@ -33,11 +33,12 @@ class AppController extends Zend_Controller_Action
         $this->view->recommends = $recommendApps->getByCategory($category_id, 10);
     }
 
+
+    // admin/
     public function addAction()
     {
+        $this->_helper->layout->setLayout('admin');
         $form = new Application_Form_App();
-        $form->submit->setLabel('Add');
-
         $this->view->form = $form;
 
         if($this->getRequest()->isPost())
@@ -46,11 +47,18 @@ class AppController extends Zend_Controller_Action
             if ($form->isValid($formData)) 
             {
                 $app = $form->getValues();
-
                 $apps = new Application_Model_DbTable_Apps();
-                echo $apps->add($app);
+                // array_push($app, array('created_at'=>date('Y-m-d H:i:s',time())));
+                $app_id = $apps->save($app);
 
-                echo 'save success';
+                // save app_category
+                $app_categories = new Application_Model_DbTable_AppCategories();
+                $app_category = array('app_id'=>$app_id,
+                                      'category_id'=>$form->getValue('category_id'),
+                                      'created_at'=>date('Y-m-d H:i:s',time()));
+                $app_categories->save($app_category);
+
+                echo 'save success id='.$app_id;
             }
         }
     }

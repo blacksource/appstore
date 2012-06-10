@@ -25,5 +25,10 @@ class Application_Model_DbTable_AppCategories extends Zend_Db_Table_Abstract
             ->where('c.category_id=?', $category_id);
         return $this->fetchRow($select);
     }
+
+    public function save($app_category)
+    {
+        return $this->insert($app_category);
+    }
 }
 
