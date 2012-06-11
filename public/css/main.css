@@ -25,7 +25,7 @@ a, a:active, .nav_new a:hover, .subnav a:hover{text-decoration:none;}/*UNDERLINE
 .nav_new li, .nav_new .splitline {background:url(/images/splitline.png) right no-repeat;}
 .nav-bgd{-webkit-box-shadow:rgba(0,0,0,0.3) 0 1px 3px;-moz-box-shadow:rgba(0,0,0,0.3) 0 1px 3px;box-shadow:rgba(0,0,0,0.3) 0 1px 3px;filter:progid:DXImageTransform.Microsoft.DropShadow(color='#C6C6C6',offX='0',offY='2');/*for ie6,7,8*/}/*SHADOW*/
 .column-w, .column-lw, .column-l, .column-r, .column-m, .rounded, .links-box, .brief .comment, .brief .down, .pagebar li a, .brief .vote, .brief .vote .text, .brief .vote .btn{background:#fff;border:solid #ddd 1px;border-radius:6px;-webkit-border-radius:6px; -moz-border-radius:6px; -o-border-radius:6px; -khtml-border-radius:6px;}/* ROUNDED */
-.header-bgd, .logo, .search-top-box, .top-login-box{height:117px;}
+.header-bgd, .logo, .search-top-box, .top-login-box{height:80px;}
 .logo a, .arrow-left, .arrow-right, .nav_new .splitline, .brief .down .btn, .brief .screen .l, .brief .screen .r {text-indent:-9876px;} 
 .hotw-index h1, .hotw-index li em, .hotw-index li p, .hotw-index li h6, .hotw-index .tabbox a, .footer li{display:inline-block;*zoom:1;*display:inline;}/*INLINE-BLOCK*/
 
@@ -36,15 +36,15 @@ a, a:active, .nav_new a:hover, .subnav a:hover{text-decoration:none;}/*UNDERLINE
 .marginb10{margin-bottom:10px;}
 	
 /*HEADER -------------------------------*/
-.header-bgd{background:url(../images/bgd_header.png);margin:0 auto;}
-.header{background:url(../images/bgd_header.png);position:relative;}
+.header-bgd{background:url(/images/bgd_header.png);margin:0 auto;}
+.header{background:url(/images/bgd_header.png);position:relative;}
 
 .logo {width:300px;float:left;}
-.logo a{width:195px;height:64px;margin-top:30px;background-position:0px 0px;}
+.logo a{width:195px;height:64px;margin-top:8px;background-position:0px 0px;}
 
 .search-top-box {width:390px;float:left;}
 .search-top-box p, .search-top-box p a{color:#999;text-align:center;}
-.search-top {background:#000;padding:4px;float:left;margin-top:35px;}
+.search-top {background:transparent;padding:4px;float:left;margin-top:35px;}
 .search-top .textarea{clear:both;float:left;width:300px;height:30px;line-height:30px;background-position:0 -70px;}
 .search-top .search{color:#fff;font-weight:700;width:80px;height:30px;background-position:0 -100px;cursor:pointer;}
 
@@ -55,14 +55,14 @@ a, a:active, .nav_new a:hover, .subnav a:hover{text-decoration:none;}/*UNDERLINE
 .top-login a, .top-login a:active{color:#777;margin-left:10px;}
 
 /*NAVIGATION ----------------------------*/
-.nav-bgd {height:40px;background:url(/images/nav_bg.png);margin-bottom:5px;}
+.nav-bgd {height:40px;background:url(/images/nav_bgd.png);margin-bottom:5px;}
 .nav-box {overflow:hidden;}
 
 .nav_new {font-size:16px;line-height:39px;}
-.nav_new li {text-align:center;float:left;padding:0 30px;line-height:38px;}
+.nav_new li {text-align:center;float:left;padding:0 30px;line-height:40px;}
 .nav_new a{color:#fff;}
-.nav_new li:hover{background:url(/images/nav_bg.png) 0px -36px;}
-.nav_new .current{background:url(/images/nav_bg.png) 0px -72px;}
+.nav_new li:hover{background:url(/images/nav_bgd1.png)}
+.nav_new .current{background:url(/images/nav_bgd2.png)}
 .nav_new .splitline{width:2px;height:40px;float:left;}
 
 .subnav{font-size:12px;right:10px;float:right;}

@@ -10,6 +10,7 @@ class AppController extends Zend_Controller_Action
 
     public function showAction()
     {
+        $this->view->type_name = $this->_request->getParam('type_name');
     	$id = $this->_request->getParam('id');
         
         $apps = new Application_Model_DbTable_Apps();

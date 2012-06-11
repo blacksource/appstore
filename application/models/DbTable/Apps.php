@@ -48,5 +48,12 @@ class Application_Model_DbTable_Apps extends Zend_Db_Table_Abstract
         return $this->insert($app);
     }
 
+    public function search($name)
+    {
+        $select = $this->select()
+                ->where("name like '%?%'", $name);
+        return $this->fetchAll($select);           
+    }
+
 }
 

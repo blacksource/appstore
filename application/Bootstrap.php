@@ -66,7 +66,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                   					array('controller' => 'download',
                   							'action' => 'index')));
 
-
         // admin
 		$router->addRoute('app_add',
                   new Zend_Controller_Router_Route('admin/app/add', 
