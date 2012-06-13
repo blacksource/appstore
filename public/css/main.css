@@ -356,3 +356,93 @@ i.star-0{background-position:0 -75px}
 .paging .pagebar_btn_goto{ border:0;}
 
 .nodata{ text-align:center; font-size:16px; padding:20px;  color:#535353; }
+
+
+
+
+
+
+
+.m-h10 {
+margin-right: 10px;
+margin-left: 10px;
+width:210px;
+}
+.li-rank-first .li-rank-hd {
+background: none;
+}
+.li-rank-hd {
+overflow: hidden;
+height: 44px;
+line-height: 44px;
+}
+.li-rank-hd::after {
+clear: both;
+height: 0;
+overflow: hidden;
+display: block;
+visibility: hidden;
+content: ".";
+}
+.li-rank-bd {
+overflow: hidden;
+clear: both;
+height: 90px;
+}
+.li-rank-text {
+overflow: hidden;
+float: left;
+width: 100%;
+min-height: 1px;
+}
+.li-rank-text-content {
+margin-left: 83px;
+}
+.li-rank-img {
+float: left;
+margin-left: -100%;
+width: 83px;
+}
+.img-app {
+position: relative;
+display: inline-block;
+padding: 3px;
+width: 70px;
+height: 70px;
+vertical-align: middle;
+}
+.img-app-none {
+position: absolute;
+left: 0;
+top: 0;
+width: 76px;
+height: 76px;
+cursor: pointer;
+}
+
+.li-rank-num {
+position: relative;
+float: left;
+padding-left: 3px;
+width: 17px;
+height: 44px;
+}
+.logo-num1, .logo-num2, .logo-num3, .logo-num4, .logo-num5, .logo-num6, .logo-num7, .logo-num8, .logo-num9, .logo-num10, .logo-num11, .logo-num12, .logo-num13 {
+display: inline-block;
+width: 13px;
+height: 13px;
+vertical-align: middle;
+background: url(/images/num.png) no-repeat 0 0;
+}
+.logo-num2{ background-position: -14px 0;}
+.logo-num3{ background-position: -28px 0;}
+.logo-num4{ background-position: -42px 0;}
+.logo-num5{ background-position: -56px 0;}
+.logo-num6{ background-position: -70px 0;}
+.logo-num7{ background-position: -84px 0;}
+.logo-num8{ background-position: -98px 0;}
+.logo-num9{ background-position: -112px 0;}
+.logo-num10{ background-position: -126px 0;}
+.logo-num11{ background-position: -140px 0;}
+.logo-num12{ background-position: -154px 0;}
+.logo-num13{ background-position: -168px 0;}

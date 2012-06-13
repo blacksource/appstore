@@ -1,52 +1,51 @@
-<div class="header-bgd">
-	<div class="header">
-		<div class="logo">
-			<a href="/index.html" class="logo">logo</a>
-		</div><!--logo end-->
-		<div class="search-top-box">
-			<div class="search-top">
-				<form action="/search" name="search">
-					<input name="keywords" value="" type="text" class="textarea">
-					<input name="" type="submit" class="btn btn-danger" value="搜 索">
-				</form>
-			</div><!--search-top end-->
-		</div><!--search-top-box end-->
-		<div class="top-login-box">
-			<div class="top-login">
-				<!--
-				<span id="span-nologin">
-					<a href="#login" class="login">登录</a>
-					<a href="/soft/register!show.action" class="reg">注册</a>
-				</span>
-				<span id="span-login" class="login"></span>
-				<br>
-				-->
-				<a href="#" onclick="setHome(this,document.location.href);return false;">设为首页</a>   
-				<a href="#" onclick="addBookmark('安丰网',document.location.href);return false;">添加收藏</a>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="nav-box">
-	<ul class="nav_new">
-		<li class="<?php echo $this->type_name=='android'?'active':''?>"><a href="/android.html">Android</a></li>
-		<li class="<?php echo $this->type_name=='iphone'?'active':''?>"><a href="/iphone.html">iPhone</a></li>
-	</ul>
-</div>
-<div class="nav-bgd">
-	<div class="nav-box">
-		<ul class="nav_new">
-			<span class="splitline">|</span>
-			<li  class="<?= $this->category_type==''?'current':''?>"><a href="/">首页</a></li>
-			<li class="<?= $this->category_type=='topic'?'current':''?>">
-				<a href="<?= '/'.$this->type_name.'/topic.html'?>">专题</a>
-			</li>
-			<li class="<?= $this->category_type=='app'?'current':''?>">
-				<a href="<?= '/'.$this->type_name.'/app.html'?>">应用</a>
-			</li>
-			<li class="<?= $this->category_type=='game'?'current':''?>">
-				<a href="<?= '/'.$this->type_name.'/game.html'?>">游戏</a>
-			</li>
-		</ul>
-	</div>
+    <div class="header">
+        <div class="header-c">
+            <div class="logo-header">
+                <i></i><a href="http://m.163.com/" target="_self">网易应用</a>
+            </div>
+        </div>
+        <div class="header-b">
+            <div class="nav-main">
+                <a href="/android/index.html" class="nav-main-item nav-main-item-3  nav-main-item-current " target="_self">Android</a>
+                <a href="/iphone/index.html" class="nav-main-item nav-main-item-1 " target="_self">iPhone</a> 
+            </div>
+            <div class="nav-sub">
+                <ul>
+                    <li class="nav-sub-li nav-sub-li-first">
+                        <a href="http://m.163.com/android/index.html" class="nav-sub-item  nav-sub-item-current  " target="_self"><span>首页</span></a>
+                    </li>
+                    <li class="nav-sub-li">
+                        <a href="http://m.163.com/android/#game" target="_self" class="nav-sub-item yui3-overlay-trigger" id="apps-game-trigger"><span><i></i>游戏</span></a> 
+                    </li>
+                    <li class="nav-sub-li">
+                        <a href="http://m.163.com/android/#app" target="_self" class="nav-sub-item yui3-overlay-trigger" id="apps-app-trigger"><span><i></i>应用 </span></a>
+                    </li>
+                    <li class="nav-sub-li">
+                        <a href="http://m.163.com/android/subject/list@all.html" class="nav-sub-item " target="_self"><span>专题</span></a>
+                    </li>
+                    <li class="nav-sub-li">
+                        <a href="http://m.163.com/android/top.html" class="nav-sub-item " target="_self"><span>排行</span> </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-search">
+                <form method="get" target="_self" action="/search">
+                    <input type="hidden" name="platform" value="2">
+                    <span class="bg-form-cmn bg-form-s2">
+                        <input type="text" placeholder="请输入应用名" class="input-s5 yui3-aclist-input" id="app-search-input" name="query" aria-autocomplete="list" aria-expanded="false" aria-owns="yui_3_4_0_2_1339546066975_48" role="combobox" autocomplete="off">
+                        <div class="yui3-widget yui3-aclist yui3-widget-positioned yui3-aclist-hidden"
+                        style="position: absolute; width: 245px; left: 0px; top: 25px;" aria-hidden="true">
+                            <div class="yui3-aclist-content">
+                                <ul class="yui3-aclist-list" id="yui_3_4_0_2_1339546066975_48" role="listbox">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="yui3-aclist-aria" aria-live="polite" role="status">
+                        </div>
+                    </span>
+                    <input type="submit" class="button-cmn button-s2" value=" ">
+                </form>
+            </div>
+        </div>
+    </div>
 </div>

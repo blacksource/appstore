@@ -22,7 +22,7 @@ class IndexController extends Zend_Controller_Action
 
     public function androidAction()
     {
-        $this->_helper->layout->setLayout('home');
+        $this->_helper->layout->setLayout('android');
         $this->view->type_name = $this->getRequest()->getActionName();
     }
 }
