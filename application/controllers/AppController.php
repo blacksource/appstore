@@ -10,6 +10,8 @@ class AppController extends Zend_Controller_Action
 
     public function showAction()
     {
+        $this->_helper->layout->setLayout('android_app');
+        /*
         $this->view->type_name = $this->_request->getParam('type_name');
     	$id = $this->_request->getParam('id');
         
@@ -27,6 +29,7 @@ class AppController extends Zend_Controller_Action
 
         $recommendApps = new Application_Model_DbTable_RecommendApps();
         $this->view->recommends = $recommendApps->getByCategory($category_id, 10);
+        */
     }
 
 

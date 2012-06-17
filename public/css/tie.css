@@ -1,0 +1,269 @@
+@charset "utf-8";
+/* TieAnywhere 2.2.3 Build 201011301914 */
+#tieAreaWrapper{ display:none;}
+.tie-area {
+	zoom: 1;
+	clear: both;
+	font-size: 12px;
+}
+	.tie-area strong { font-weight: bold; }
+	.tie-area form, .tie-area ul, .tie-area ol { margin: 0; padding: 0; }
+	.tie-area img { border: none; }
+	
+
+
+	.tie-area .cDRed, .tie-area .cDRed:visited, .tie-area .cDRed a { color: #ba2636; }
+	.tie-area .tieLink, .tie-area .tieLink:visited { color: #2b2b2b; }
+	.tie-area .tieLink:hover { color: #ba2636; }
+	.tie-area .tieCount { font-weight: bold; }
+
+.tie-hidden { display: none; }
+
+
+.tie-titlebar {
+	zoom:1;
+	height: 25px;
+	line-height: 25px;
+	clear: both;
+	overflow: hidden;
+	text-align: left;
+	background: url(talkbubble.png) left 6px no-repeat;
+	margin-top: 12px;
+	padding-left: 19px;
+	font-size: 14px;
+}
+.tie-titlebar strong{ font-weight:bold;}
+
+/* 跟贴展示区 */
+.tie-show { display: none; text-align: left; padding-bottom: 9px; }
+	.tie-show .tie-titlebar { margin-left: 19px; margin-right: 19px; }
+	.tie-show .tie-tips { font-size: 14px; margin: 0; padding: 18px 0 28px 0; text-align: center; }
+	.tie-show .checked { background: #f5f5f5; }
+	.tie-show .reply { text-align: left; padding: 16px 19px 0 19px; }
+		.tie-show .inner {
+			padding: 0 2px 18px 2px;
+			zoom: 1;
+			overflow: hidden;
+			border-bottom: 1px dotted #afafb0;
+		}
+			.tie-show .author { float: left; display: block; color: #1e50a2; height: 18px; line-height: 19px; }
+			.tie-show .mobileAuthor {
+				background: url(http://comment.news.163.com/backgrounds1.3.png) no-repeat left -153px;
+				padding-left: 15px;
+			}
+			.tie-show .from { color: #000; font-weight:bold; }
+			.tie-show .ip,.tie-show .phoneType,.tie-show .phoneVersion { color: #666; }
+			.tie-show .name { font-weight: bold; color:#000; }
+			.tie-show .postTime { color: #666; float: right; display: block; line-height: 19px; }
+			.tie-show .body { font-size: 14px; padding: 12px 0; clear: both; }
+			.tie-show .hideTips { padding: 0 7px 7px 7px; font-size: 12px; color: #666; cursor: pointer; margin: 0; }
+			.tie-show .hideTips span { color: #ba2636; }
+			.tie-show .operations { color: #666; float: right; list-style: none;  cursor: pointer;}
+				.tie-show .operations li { float: left; padding-left: 1.2em; }
+					.tie-show .operations .support a,.tie-show .operations .support a:visited{ color:#e7610e;}
+						.tie-show .operations .support em { font-style: normal;}
+			.tie-show .content { margin: 9px 3px; line-height: 21px; }
+			.tie-show .commentBox {
+				padding: 3px;
+				background: #ffffee;
+				border: 1px solid #999;
+				overflow: hidden;
+				margin-bottom: 12px;
+				word-wrap: break-word;
+			}
+			.tie-show .commentInfo {
+				line-height: 20px;
+				height: 20px;
+				overflow: hidden;
+				position: relative;
+				font-size: 12px;
+				margin: 0 3px;
+			}
+			.tie-show .floorCount { color: #666; position: absolute; right: 3px; top: 0; }
+
+
+/* 发贴区 */
+.tie-post {
+	zoom: 1;
+	clear: both;
+}
+
+/* 表单输入框 */
+.tie-textbox {
+	background: #fff;
+	line-height: 16px;
+	border:none;
+	font-size: 12px;
+	padding-left:2px;
+	width:118px; height:23px; background:url(input.png) no-repeat;
+}
+
+/* 回复表单 */
+.tie-postform .tie-textarea {
+	width: 99%;
+	height:96%;
+	border:none;
+	padding:3px;
+	margin:0px;
+	background: #fff url(http://comment.news.163.com/images/post_body_bg.gif) no-repeat center center;
+	font-size: 14px;
+	clear: both;
+	text-align: left;
+	color: #555;
+	zoom:1;
+}
+.tie-submit{background:url(btton-big.png) no-repeat 0 0;width:80px;height:29px;border:0;color:#444;cursor:pointer;float:right;}
+.tie-postform .tie-textarea-focus { color: #000; }
+.tie-postform .send { clear: both; padding:0;line-height: 23px;height: 29px;}
+	.tie-postform .send p { float: left; color: #555; margin: 0;position:relative; z-index:1;}
+	.tie-postform .send div.right,.tie-postform-sub{float:right;margin-left:-5px; width:170px;}
+	.tie-postform .send .toPost { cursor: pointer; font-size: 12px; }
+	/* 同步到微博 */
+	.tie-postform .syntinyblog{display:inline;zoom:1;color:#666;position:relative;z-index:2;}
+	.tie-postform .send .syntinyblog{ float:left; margin:7px 0 0 -5px;color:#666;position:relative;z-index:2;}
+		.syntinyblog .tinyblogTips{position:absolute;z-index:3;left:0;*left:3px;top:28px;background:#ffeded;border:1px solid #f6d6d6;margin:auto;line-height: 23px;}
+		.tie-quotedialog .tinyblogTips{*top:30px;}
+		.syntinyblog .tinyblogTips-body{float:left;padding:9px 12px 3px;position:relative;z-index:4;margin-top:-7px;white-space:nowrap;background:url(http://img1.cache.netease.com/tie/img/bg1.0.0.png) no-repeat 28px -193px;}
+		.syntinyblog .tinyblogTips-close{display:block;position:absolute;z-index:5;right:4px;top:12px;width:8px;height:8px;background:url(http://img1.cache.netease.com/tie/img/bg1.0.0.png) no-repeat -88px 0;overflow:hidden;text-indent:-10em;cursor:pointer;}
+
+
+/* 发贴作者 */
+.tie-author {
+	clear: both;
+	text-align: left;
+	height: 24px;
+	line-height: 24px;
+	overflow: hidden;
+}
+	.tie-author input{ *vertical-align: middle;}
+	.tie-author-logon,
+	.tie-author-nickname,
+	.tie-author-toname { display: none; }
+		.tie-author .tie-button { cursor: pointer; font-size: 12px; }
+	
+	.tie-author-login .tipsBg{background:#ffeded;}
+	.tie-author-logon { color: #666; position: relative; zoom: 1; height:24px; }
+	.tie-author-logon .howToUseTie,.tie-author-login .howToUseTie{ float:right;}
+	
+	.tie-login-button{background:url(button.png) no-repeat;width:57px; height:23px; border:0; color:#444; cursor:pointer;}
+	.tie-score{ line-height:24px;}
+	.tie-score strong{ font-weight:bold; margin:0 5px;}
+/* 模拟对话框 */
+.tie-dialog {
+	width: 480px;
+	position: fixed;
+	_position: absolute;
+	text-align: left;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+}
+	.tie-dialog-titlebar {
+		height: 30px;
+		line-height: 30px;
+		padding: 0 5px;
+		cursor: move;
+	}
+		.tie-dialog-title { float: left; color: #000; font-size: 14px; font-weight: bold; }
+		.tie-dialog-titlebar .tie-dialog-close { margin-top:7px; float: right;width:16px; height:16px; background:url(close-btn.png) no-repeat left center; overflow:hidden; text-indent:-10em; overflow:hidden; cursor:pointer;}
+	.tie-dialog-body { padding: 0px 16px; clear: both; }
+
+.tie-nicknamedialog { width: 280px; }
+	.tie-nicknamedialog .tie-dialog-titlebar {}
+	.tie-nicknamedialog .tie-dialog-body { padding: 10px 0; }
+		.tie-nicknamedialog form { padding: 0 0 0 15px; }
+			.tie-nicknamedialog .tie-textbox { width: 142px; background: #fff; }
+			.tie-nicknamedialog label { font-size: 14px; padding-top: 10px; display: block; }
+			.tie-nicknamedialog .error { color: #ba2636; }
+
+.tie-quotedialog { width: 630px; }
+	.tie-quotedialog .tie-postform .tie-textarea { _width: 516px; }
+	.tie-quotedialog .tie-postform-sub{ text-align: center; margin-top: 12px; }
+
+.tie-repostdialog { width: 386px; }
+.tie-repostdialog-confirm {
+	border: none;
+	width: 72px;
+	height: 27px;
+	cursor: pointer;
+	background: url(http://img1.cache.netease.com/tie/img/bg1.0.0.png) no-repeat 0 -63px;
+}
+.tie-repostdialog-tips { color: #467902; font-size: 14px; margin: 22px 0; text-align: center;}
+	.tie-repostdialog-tips .success{ margin-left:8px;display:block;padding:5px 0 10px 40px;text-align:left;color:#333; line-height:1.5em;}
+.tie-repostdialog-content {
+	border-top: 1px dotted #afafb0;
+	border-bottom: 1px dotted #afafb0;
+	line-height: 21px;
+	padding: 9px 6px;
+	margin-bottom: 16px;
+	word-break: break-all;
+}
+/* 半透边框 */
+.borderShade{background:#fff;_border:5px solid #ddd; float:left;}
+.borderShade .c1,.borderShade .c2,.borderShade .c3,.borderShade .c4,.borderShade .c6,.borderShade .c7,.borderShade .c8,.borderShade .c9{font-size:1px;line-height:1px; display:block; position:absolute; z-index:1;background:url(http://comment.news.163.com/images/shadebg1.png) no-repeat 0 0;_display:none;}
+.borderShade .c1,.borderShade .c3,.borderShade .c7,.borderShade .c9{width:6px;height:5px;}
+.borderShade .c2,.borderShade .c8{height:5px;width:100%;background-repeat:repeat-x;}
+.borderShade .c4,.borderShade .c6{width:6px; height:100%;background:url(http://comment.news.163.com/images/shadebg2.png) repeat-y 0 0;}
+.borderShade .c1{left:-6px; top:-5px;background-position:0 0;}
+.borderShade .c2{left:0; top:-5px; background-position:0 -10px;}
+.borderShade .c3{right:-6px; top:-5px;background-position:-6px 0;}
+.borderShade .c4{left:-6px; top:0;background-position:0 0;}
+.borderShade .c6{right:-6px; top:0;background-position:-6px 0;}
+.borderShade .c7{left:-6px; bottom:-5px;background-position:0 -5px;}
+.borderShade .c8{left:0; bottom:-5px;background-position:0 -15px;}
+.borderShade .c9{right:-6px; bottom:-5px;background-position:-6px -5px;}
+
+/*公共属性*/
+.cOrg{ color:#e7610e;}
+.blank9{ height:9px; clear:both; font-size:0; overflow:hidden; zoom:1;}
+.blank12{ height:12px; clear:both; font-size:0; overflow:hidden; zoom:1;}
+.blank15{ height:15px; clear:both; font-size:0; overflow:hidden; zoom:1;}
+.blank20{ height:20px; clear:both; font-size:0; overflow:hidden; zoom:1;}
+.hidden{ display:none;}
+.clear {clear:both; height:0; overflow:hidden; display:block;}
+/*圆角框*/
+.rcbox-head{ margin:0 5px; height:4px; background-color:#f4f3f1; border-top:1px solid #e6e6df; font-size:0; position:relative;}
+.rcbox-head-L{ width:5px; height:100%; background: url(corner1.png); position:absolute; left:-5px; top:0;}
+.rcbox-head-R{ width:5px; height:100%; background: url(corner2.png); position:absolute; right:-5px; top:0;}
+.rcbox-body{ background:#f4f3f1; border-style:solid; border-color:#e6e6df; border-width:0 1px; padding:0px 20px; overflow:hidden; zoom:1;  clear:both;}
+.rcbox-footer{ margin:0 5px; height:5px; background-color:#f4f3f1; border-bottom:1px solid #e6e6df; font-size:0; position:relative;}
+.rcbox-footer-L{ width:5px; height:100%; background: url(corner3.png); position:absolute; left:-5px; bottom:0px;}
+.rcbox-footer-R{ width:5px; height:100%; background: url(corner4.png); position:absolute; right:-5px; bottom:0px;}
+
+
+.rcbox3 .rcbox-head{ background:url(corner3-t.png) repeat-x; border:none; height:30px;}
+.rcbox3 .rcbox-head-L{ background:url(corner3-1.png) left top ;}
+.rcbox3 .rcbox-head-R{ background:url(corner3-2.png) right top; }
+.rcbox3 .rcbox-footer{ background:#fff; height:4px;}
+.rcbox3 .rcbox-footer-L{ background:url(corner3-3.png);}
+.rcbox3 .rcbox-footer-R{ background:url(corner3-4.png);}
+.rcbox3 .rcbox-body{ padding:0; margin:0; background:#fff;}
+/*内部圆角，需放在最下面*/
+.rcbox2 .rcbox-head{ background:url(corner2-t.png) repeat-x; border:none; height:5px;}
+.rcbox2 .rcbox-head-L{ background:url(corner2-1.png);}
+.rcbox2 .rcbox-head-R{ background:url(corner2-2.png);}
+.rcbox2 .rcbox-footer{background:url(corner2-b.png) repeat-x; border:none; height:5px;}
+.rcbox2 .rcbox-footer-L{ background:url(corner2-3.png);}
+.rcbox2 .rcbox-footer-R{ background:url(corner2-4.png);}
+.rcbox2 .rcbox-body{ padding:0; padding-left:5px;margin-left: -1px; background: url(corner2-l.png) left top repeat-y;}
+.rcbox2 .rcbox-body2{padding:0;  padding-right:5px;margin-right: -1px; background: url(corner2-r.png) right top repeat-y #fff;}
+
+.star-rank{ display:inline-block;position:relative; width: 150px; height:15px;background:url(stars.png) left top no-repeat; vertical-align:text-top; line-height:15px; overflow:hidden;}
+.star-rank a{ width:15px; z-index:15; display:block; height:15px; width:15px; float:left; cursor:pointer;}
+   .s1{ background-position:left -15px;}
+   .s2{ background-position:left -30px;}
+   .s3{ background-position:left -45px;}
+   .s4{ background-position:left -60px;}
+   .s5{ background-position:left -75px;}
+   .tips{ line-height:1.5; margin-left:10px;}
+
+.tie-post .tie-score{ line-height:26px; text-align:center;}
+.tie-post .tie-score .star-rank{ display:inline-block;position:relative; width: 230px; height:26px;background:url(stars-big.png) left top no-repeat; vertical-align:text-top; line-height:26px; overflow:hidden;}
+.tie-post .tie-score .star-rank a{ width:27px; z-index:15; display:block; height:26px; float:left; cursor:pointer;}
+.tie-post .tie-score .s1{ background-position:left -26px;}
+.tie-post .tie-score .s2{ background-position:left -52px;}
+.tie-post .tie-score .s3{ background-position:left -78px;}
+.tie-post .tie-score .s4{ background-position:left -104px;}
+.tie-post .tie-score .s5{ background-position:left -130px;}
+.tie-post .tie-score .tips{ line-height:1.5; font-size:20px; font-weight:bold; color:#E7610E; margin-left:10px;}

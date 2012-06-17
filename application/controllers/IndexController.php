@@ -10,6 +10,7 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
+        $this->_redirect('android.html');
         $this->render('android');
         $this->view->type_name = "android";
     }
