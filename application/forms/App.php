@@ -24,6 +24,10 @@ class Application_Form_App extends Zend_Form
         $logo = new Zend_Form_Element_Text('logo');
         $logo->setLabel('logo');
 
+        $price = new Zend_Form_Element_Text('price');
+        $price->setLabel('price');
+
+
         $version = new Zend_Form_Element_Text('version');
         $version->setLabel('version');
 
@@ -56,7 +60,7 @@ class Application_Form_App extends Zend_Form
         $submit = new Zend_Form_Element_Submit('submit');
         $submit->setLabel('Add');
 
-        $this->addElements(array($type_name, $name, $category_id, $logo, $version, $developer, $star, $language, $size, $download_times, $app_path, $description, $created_at, $submit));
+        $this->addElements(array($type_name, $name, $category_id, $logo, $price, $version, $developer, $star, $language, $size, $download_times, $app_path, $description, $created_at, $submit));
 
         // add category options
         $categories = new Application_Model_DbTable_Categories();

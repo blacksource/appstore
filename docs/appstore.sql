@@ -98,6 +98,7 @@ INSERT INTO categories(id, type_name, name, parent_id, app_count, created_at)
 VALUES(106, 2, '休闲益智', 13, 5326, now());
 INSERT INTO categories(id, type_name, name, parent_id, app_count, created_at)
 VALUES(107, 2, '射击动作', 13, 5326, now());
+
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,6 +115,7 @@ CREATE TABLE `apps` (
   `type_name` varchar(20) NOT NULL,
   `name` varchar(255) NOT NULL,
   `logo` varchar(255) NOT NULL,
+  `price` varchar(20) DEFAULT 0,
   `version` varchar(20) NOT NULL,
   `category_id` int(11) NOT NULL,
   `star` int(11) DEFAULT NULL,
@@ -136,7 +138,7 @@ CREATE TABLE `apps` (
 
 LOCK TABLES `apps` WRITE;
 /*!40000 ALTER TABLE `apps` DISABLE KEYS */;
-INSERT INTO `apps` VALUES (1, 'android', '恶魔忍者2汉化版','http://cdn.image.market.hiapk.com/data/upload//2012/04_11/201204111029383871.png','1.1.7',104,3,'Droid Studio','English','10.5M',2352365,'2012-06-03 12:33:27',NULL,NULL,'upload/app/1.apk','恶魔忍者2 Devil Ninja2(vs Boss)<br/>
+INSERT INTO `apps` VALUES (1, 'android', '恶魔忍者2汉化版','http://cdn.image.market.hiapk.com/data/upload//2012/04_11/201204111029383871.png',0,'1.1.7',104,3,'Droid Studio','English','10.5M',2352365,'2012-06-03 12:33:27',NULL,NULL,'upload/app/1.apk','恶魔忍者2 Devil Ninja2(vs Boss)<br/>
 Devil Ninja2(恶魔忍者2)是 Devil Ninja 的第二部，这是一款还算不错的横版动作过关游戏，与第一部相比，这个新的版本中游戏的画面做了一些修改，图像看起来更加清晰，而且里面人物看起来也更大了一点。游戏在其他方面和第一部的差别并不大，同样的操作方式和故事情节。游戏中你的目的就是要打死怪物。杀死BOSS，使用各种道具来增强你的战斗力。<br/>
 
 游戏玩法：<br/>
@@ -146,9 +148,9 @@ Devil Ninja2(恶魔忍者2)是 Devil Ninja 的第二部，这是一款还算不�
 4.收集道具来获得更多必杀技;<br/>
 5.游戏加速。<br/>');
 
-INSERT INTO `apps` VALUES (2, 'android', '腾讯微信','/upload/icon/201204111029383871.png','4.0',101,4,'中国腾讯科技（深圳）有限','中文','10.39MB',26492776,'2012-06-03 12:33:27',NULL,NULL,'upload/app/2.apk','基于Android平台的腾讯微信服务，带给您全新的移动即时通信体验。您可以使用微信软件快速地发送消息，即时拍照分享，随时随地联系身边的朋友。支持基于Android平台的手机终端设备。为了保护您的隐私，微信不会自动扫描和上传您的手机通讯录。并且不透露信息是否已读，降低收信压力。功能简介： 1.快速消息：极速轻快的楼层式消息对话，带给您飞一般的手机聊天体验。 2.照片分享：可调用手机拍照或插入相册图片,照片任意发，只需支付流量费用。 3.设置头像：给自己设置个性化头像,让您在好友的微信里看起来更亲切。');
+INSERT INTO `apps` VALUES (2, 'android', '腾讯微信','/upload/icon/201204111029383871.png',0,'4.0',101,4,'中国腾讯科技（深圳）有限','中文','10.39MB',26492776,'2012-06-03 12:33:27',NULL,NULL,'upload/app/2.apk','基于Android平台的腾讯微信服务，带给您全新的移动即时通信体验。您可以使用微信软件快速地发送消息，即时拍照分享，随时随地联系身边的朋友。支持基于Android平台的手机终端设备。为了保护您的隐私，微信不会自动扫描和上传您的手机通讯录。并且不透露信息是否已读，降低收信压力。功能简介： 1.快速消息：极速轻快的楼层式消息对话，带给您飞一般的手机聊天体验。 2.照片分享：可调用手机拍照或插入相册图片,照片任意发，只需支付流量费用。 3.设置头像：给自己设置个性化头像,让您在好友的微信里看起来更亲切。');
 
-INSERT INTO `apps` VALUES (3, 'android', '腾讯微信','/upload/icon/201204111029383871.png','3.0',103,3,'中国腾讯科技（深圳）有限','中文','10.39MB',26492776,'2012-06-03 12:33:27',NULL,NULL,'upload/app/2.apk','基于Android平台的腾讯微信服务，带给您全新的移动即时通信体验。您可以使用微信软件快速地发送消息，即时拍照分享，随时随地联系身边的朋友。支持基于Android平台的手机终端设备。为了保护您的隐私，微信不会自动扫描和上传您的手机通讯录。并且不透露信息是否已读，降低收信压力。功能简介： 1.快速消息：极速轻快的楼层式消息对话，带给您飞一般的手机聊天体验。 2.照片分享：可调用手机拍照或插入相册图片,照片任意发，只需支付流量费用。 3.设置头像：给自己设置个性化头像,让您在好友的微信里看起来更亲切。');
+INSERT INTO `apps` VALUES (3, 'android', '腾讯微信','/upload/icon/201204111029383871.png',19,'3.0',103,3,'中国腾讯科技（深圳）有限','中文','10.39MB',26492776,'2012-06-03 12:33:27',NULL,NULL,'upload/app/2.apk','基于Android平台的腾讯微信服务，带给您全新的移动即时通信体验。您可以使用微信软件快速地发送消息，即时拍照分享，随时随地联系身边的朋友。支持基于Android平台的手机终端设备。为了保护您的隐私，微信不会自动扫描和上传您的手机通讯录。并且不透露信息是否已读，降低收信压力。功能简介： 1.快速消息：极速轻快的楼层式消息对话，带给您飞一般的手机聊天体验。 2.照片分享：可调用手机拍照或插入相册图片,照片任意发，只需支付流量费用。 3.设置头像：给自己设置个性化头像,让您在好友的微信里看起来更亲切。');
 /*!40000 ALTER TABLE `apps` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -256,21 +258,6 @@ CREATE TABLE `recommend_apps` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `recommend_apps`
---
-
-LOCK TABLES `recommend_apps` WRITE;
-/*!40000 ALTER TABLE `recommend_apps` DISABLE KEYS */;
-INSERT INTO recommend_apps(app_id, category_id, created_at)
-VALUES(1, 4, now());
-INSERT INTO recommend_apps(app_id, category_id, created_at)
-VALUES(2, 4, now());
-INSERT INTO recommend_apps(app_id, category_id, created_at)
-VALUES(3, 4, now());
-/*!40000 ALTER TABLE `recommend_apps` ENABLE KEYS */;
-UNLOCK TABLES;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
