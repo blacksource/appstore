@@ -1,6 +1,6 @@
 <div class="sect">
-	<div class="crumb">当前位置：<a href="/android" target="_self">
-		Android首页</a> &gt; <a href="/android/game/ca96b6hqnd/index.html" target="_self">休闲益智</a> &gt; 愤怒的小鸟夏日版(Angry Birds Seasons)
+	<div class="crumb">当前位置：<a href="/android.html" target="_self">
+		Android首页</a> &gt; <a href="#" target="_self"><?=$this->category->name?></a> &gt; <?=$this->app->name?>
 	</div>
 </div>
 
@@ -19,12 +19,12 @@
         		<div class="clearfix">
         			<!--right begin-->
         			<div class="sect-main-s">
-        				<?php echo $this->partial('app/right.phtml'); ?>
+        				<?php echo $this->partial('app/right.phtml', array('app'=>$this->app, 'category'=>$this->category, 'imgs'=>$this->imgs)); ?>
         			</div>
         			<!--right end->
         			<!--left begin-->
         			<div class="sect-side-s">
-        				<?php echo $this->partial('app/left.phtml'); ?>
+        				<?php echo $this->partial('app/left.phtml', array('app'=>$this->app)); ?>
         			</div>
         			<!--left end-->
         		</div>

@@ -17,14 +17,29 @@ class IndexController extends Zend_Controller_Action
 
     public function iphoneAction()
     {      
-        $this->_helper->layout->setLayout('home');
+        $this->_helper->layout->setLayout('iphone');
         $this->view->type_name = $this->getRequest()->getActionName();   
     }
 
     public function androidAction()
     {
         $this->_helper->layout->setLayout('android');
-        $this->view->type_name = $this->getRequest()->getActionName();
+
+        $recommendApps = new Application_Model_DbTable_RecommendApps();
+        // get install_recommend
+        $this->views->recommend_games = $recommendApps->getTopByType('game', 12);
+        
+        // get app_recommend
+        $this->views->recommend_apps = $recommendApps->getTopByType('game', 12);
+        
+        // get new_recommend
+        $this->views->recommend_news = $recommendApps->getTopByType('game', 12);
+
+        // get game top
+
+        // get app top
+
+        // 
     }
 }
 

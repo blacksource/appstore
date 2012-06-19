@@ -207,7 +207,7 @@ body{ font:normal 12px/1.75 "\5B8B\4F53",sans-serif; color:#2b2b2b;}
 .arti-ed-title{ padding:13px 25px 25px; width:470px; font:normal 20px/1.5 SimHei; text-align:center; background:url(/images/bg13.png) no-repeat center bottom;}
 
 .arti-bg-w245{ *zoom:1; height: inherit; background: url(http://img3.cache.netease.com/apps/v2/img/arti3.png) center;}
-.arti-bg-w240{ *zoom:1; height: inherit; background: url(http://img4.cache.netease.com/apps/v2/img/arti6.png) center;border-bottom:1px solid #e3ddca;}
+.arti-bg-w240{ *zoom:1; height: inherit; background: url(/images/arti6.png) center;border-bottom:1px solid #e3ddca;}
 
 .arti-sp1 { background:url(http://img5.cache.netease.com/apps/adp11/adp_images/bg38.png) repeat-x 0 top;}
 .arti-sp1 .arti-hd-l,
@@ -541,7 +541,7 @@ body{ font:normal 12px/1.75 "\5B8B\4F53",sans-serif; color:#2b2b2b;}
 .wrap { min-width:960px; background: url(http://img6.cache.netease.com/apps/v2/img/bg35.png) repeat-x 0 0;}
 .header {text-align: left;}
 .header-c, .header-b { margin-right:auto; margin-left:auto; width:960px;}
-.header-c { height:101px; position: relative; z-index:2; background:url(/images/sp1.jpg) no-repeat 0 -760px;}
+.header-c { height:60px; position: relative; z-index:2; background:url(/images/sp1.jpg) no-repeat 0 -760px;}
 .header-b { height:88px; width:968px; background:url(/images/sp1.jpg) no-repeat 0 -660px; position:relative; z-index:1;}
 
 .header-system, .header-login { position:absolute; top:24px; right:0;}
@@ -551,7 +551,7 @@ body{ font:normal 12px/1.75 "\5B8B\4F53",sans-serif; color:#2b2b2b;}
 .header-search { position:absolute; top:46px; right:13px;;}
 
 /* header */
-.logo-header { width:244px; height:48px; position:absolute; left:7px; top:33px; overflow:hidden;}
+.logo-header { width:244px; height:48px; position:absolute; left:7px; top:10px; overflow:hidden;}
 .logo-header a { position:absolute; left:0; top:0; width:244px; height:48px; display:block; overflow:hidden; text-indent:-999em;}
 .logo-header i { position:absolute; left:0; top:0; width:244px; height:48px; display:block; background:url(/images/logo.png) no-repeat 0 0; _background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/images/logo.png");}
 .nav-main-item { position:absolute; top:5px; height:32px; width:138px; display:block; text-indent:-99em; overflow:hidden;}

@@ -1,11 +1,10 @@
 <div class="sect-main-s-inner p-t15">
-	<h2><span class="f-h1">愤怒的小鸟夏日版(Angry Birds Seasons)</span></h2>
+	<h2><span class="f-h1"><?=$this->app->name?></span></h2>
 	<div class="m-t5 clearfix">
     	<div class="fl-l m-r15">
-        	<span class="vote-column-s"><i style="width:80%"></i></span>
+        	<span class="vote-column-s"><i style="width:<?=$this->app->star?>%"></i></span>
         </div>
     </div>
-
     <div class="yui3-widget yui3-tabs">
     	<div class="arti-s yui3-tabs-content">
     		<div class="arti-s-hd">
@@ -22,29 +21,29 @@
             <div class="arti-s-bd p-v20 bg-solid-b">
             	<div class="yui3-tabs-panel yui3-tabs-panel-selected">
                     <div class="f14px download-app-desc" id="app-desc" style="height: 75px; ">
-                        <p class="c-orange">编辑点评：愤怒的小鸟最新夏日版。</p>    														<p>
-欢迎来到美丽的亚特兰蒂斯的小猪世界（piglantis）！小鸟们又遇到了新的状况，在这水下仙境——尝试把小鸟弹射出去，看看会发生什么！ 在这神秘的热带礁湖王国，你有信心击败国王猪吗？一起探索水下遗址亚特兰蒂斯的小猪世界</p>
-<p>
-（piglantis），挑战30个全新关卡！水物理特性一定让你爱不释手——提示：猪，下沉！这个夏天，尽情感受来自神秘的亚特兰蒂斯文明千年不息的流水声吧！</p>
+                    	<p class="c-orange" >编辑点评：<?=$this->app->comment?></p>
+                    	<div>
+                        	<?=$this->app->description?>
+                        </div>
 					</div>
                 </div>
 	            <div class="yui3-tabs-panel">
 	                <table class="table-appinfo">
 	                    <tbody>
 	                    	<tr>
-		                        <th>价格：</th>
+		                        <th>价格：<?=$this->app->price?></th>
 								<td>
-		                        <th>类别：</th><td>休闲益智 </td>
+		                        <th>类别：</th><td><?=$this->category->name?></td>
 		                    </tr>
 		                    <tr>
-								<th>大小：</th><td>22.70M</td>
-								<th>语言：</th><td>英文</td>
+								<th>大小：</th><td><?=$this->app->size?></td>
+								<th>语言：</th><td><?=$this->app->language?></td>
 		                    </tr>
 		                    <tr>
-								 <th>版本：</th><td>2.4.0</td>
+								 <th>版本：</th><td><?=$this->app->version?></td>
 							</tr>
 		                    <tr>
-		                        <th>开发者：</th><td>Rovio Mobile Ltd.</td>
+		                        <th>开发者：</th><td><?=$this->app->developer?></td>
 		                    </tr>
 	                	</tbody>
 	                </table>
@@ -52,25 +51,15 @@
 	        </div>
 	        <!--images list start-->
 	        <div id="shotlist-container" class="yui3-imagelist m-v40 yui3-widget">
-	        	<div id="yui_3_4_0_6_1339949668484_17" class="yui3-imagelist-content">
-	        		<div class="m-t15 pos-r" id="yui_3_4_0_6_1339949668484_24">
+	        	<div class="yui3-imagelist-content">
+	        		<div class="m-t15 pos-r">
 	        			<div class="container-shot-list">
 	        				<ul class="shot-list" id="shot-list">
-	        					<li>
-	        						<div class="box-download-shot"><img src="http://img6.ph.126.net/vJJF3L5XsFVuVkcqZZwsTg==/1303229142187968826.jpg" width="140" height="140" title="点击查看大图"></div>
-	        					</li>
-	        					<li>
-	        						<div class="box-download-shot"><img src="http://img1.ph.126.net/m-UG1xAxHnzp0KCejefESQ==/1360650037436945971.jpg" width="140" height="140" title="点击查看大图"></div>
-	        					</li>
-	        					<li>
-	        						<div class="box-download-shot"><img src="http://img3.ph.126.net/jtbk6BsKvGbTspL58rwa1g==/2509630892369843303.jpg" width="140" height="140" title="点击查看大图"></div>
-	        					</li>
-	        					<li>
-	        						<div class="box-download-shot"><img src="http://img1.ph.126.net/X-IJ0lEMIWAIt851EjpC5w==/1324621240417975931.jpg" width="140" height="140" title="点击查看大图"></div>
-	        					</li>
-	        					<li>
-	        						<div class="box-download-shot"><img src="http://img9.ph.126.net/ViVpAWMO8Beu6CQK5ldDAg==/2555792788550386719.jpg" width="140" height="140" title="点击查看大图"></div>
-	        					</li>
+	        					<? foreach ($this->imgs as $img) { ?>
+	        						<li>
+	        							<div class="box-download-shot"><img src="<?=$img->img_path?>" width="140" height="140" title="点击查看大图"></div>
+	        						</li>	
+	        					<? } ?>
 	        				</ul>
 	        			</div>
 	        			<span class="yui3-imagelist-arrow-left yui3-imagelist-arrow-left-disabled"></span>
