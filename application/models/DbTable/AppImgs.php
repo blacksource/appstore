@@ -11,5 +11,10 @@ class Application_Model_DbTable_AppImgs extends Zend_Db_Table_Abstract
                 ->where('app_id=?', $app_id);
         return $this->fetchAll($select);
     }
+
+    public function save($appImg)
+    {
+        return $this->insert($appImg);
+    }
 }
 

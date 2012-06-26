@@ -1,0 +1,72 @@
+<div class="sect-main-s-inner p-t15">
+	<h2><span class="f-h1"><?=$this->app->name?></span></h2>
+	<div class="m-t5 clearfix">
+    	<div class="fl-l m-r15">
+        	<span class="vote-column-s"><i style="width:<?=$this->app->star?>%"></i></span>
+        </div>
+    </div>
+    <div class="yui3-widget yui3-tabs">
+    	<div class="arti-s yui3-tabs-content">
+    		<div class="arti-s-hd">
+                <ul class="tabs-2-list m-l10">
+                    <li>
+                    	<span class="yui3-tabs-trigger yui3-tabs-trigger-selected">简介</span>
+                    </li>
+                    <li>
+                    	<span class="yui3-tabs-trigger">参数</span>
+                    </li>   
+                </ul>
+            </div>
+
+            <div class="arti-s-bd p-v20 bg-solid-b">
+            	<div class="yui3-tabs-panel yui3-tabs-panel-selected">
+                    <div class="f14px download-app-desc" id="app-desc" style="height: 75px; ">
+                    	<p class="c-orange" >编辑点评：<?=$this->app->comment?></p>
+                    	<div>
+                        	<?=$this->app->description?>
+                        </div>
+					</div>
+                </div>
+	            <div class="yui3-tabs-panel">
+	                <table class="table-appinfo">
+	                    <tbody>
+	                    	<tr>
+		                        <th>价格：<?=$this->app->price?></th>
+								<td>
+		                        <th>类别：</th><td><?=$this->category->name?></td>
+		                    </tr>
+		                    <tr>
+								<th>大小：</th><td><?=$this->app->size?></td>
+								<th>语言：</th><td><?=$this->app->language?></td>
+		                    </tr>
+		                    <tr>
+								 <th>版本：</th><td><?=$this->app->version?></td>
+							</tr>
+		                    <tr>
+		                        <th>开发者：</th><td><?=$this->app->developer?></td>
+		                    </tr>
+	                	</tbody>
+	                </table>
+	            </div>
+	        </div>
+	        <!--images list start-->
+	        <div id="shotlist-container" class="yui3-imagelist m-v40 yui3-widget">
+	        	<div class="yui3-imagelist-content">
+	        		<div class="m-t15 pos-r">
+	        			<div class="container-shot-list">
+	        				<ul class="shot-list" id="shot-list" style="left:0px">
+	        					<? foreach ($this->imgs as $img) { ?>
+	        						<li>
+	        							<div class="box-download-shot"><img src="<?=$img->img_path?>" width="200" height="300" title="点击查看大图"></div>
+	        						</li>	
+	        					<? } ?>
+	        				</ul>
+	        			</div>
+	        			<span class="yui3-imagelist-arrow-left yui3-imagelist-arrow-left-disabled"></span>
+	        			<span class="yui3-imagelist-arrow-right <?= $this->imgs->count() > 3? '' : 'yui3-imagelist-arrow-right-disabled'?>"></span>
+	        		</div>
+	        	</div>
+	        </div>
+    	</div>
+    </div>
+</div>

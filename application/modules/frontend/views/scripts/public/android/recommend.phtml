@@ -1,0 +1,7 @@
+<h3>精品推荐</h3>
+<ul class="sort-r">
+	<?php foreach ($this->recommends as $recommend) { ?>
+		<li><a href="/app/<?php echo $recommend->app_id?>"><span class="icon"><img src="<?php echo $recommend->logo?>" width="52" height="51"></span><?php echo $recommend->name?> </a></li>
+	<?php } ?>
+</ul>
+<div class="clear"></div>

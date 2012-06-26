@@ -1,11 +1,23 @@
 <?php
 
+// require '../library/Jacobi/Controller/LayoutLoader.php'; 
+
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
 
 	protected function _initRouter()
     {
-        $frontController = Zend_Controller_Front::getInstance();
+    	Zend_Controller_Action_HelperBroker::addPrefix('Jacobi_Helper');
+
+    	$frontController = Zend_Controller_Front::getInstance();
+    	$frontController->addModuleDirectory('../application/modules');
+   //  	$frontController->setControllerDirectory(array(
+			//     'default'    => '../application/modules/frontend/controllers',
+			//     'admin'    => '../application/modules/backend/controllers',
+			// ));
+		$frontController->setDefaultModule('frontend');
+		// $frontController->registerPlugin(new Jacobi_Controller_Action_Helper_LayoutLoader());
+
         $router = $frontController->getRouter();
 
         $router->addRoute('android_html',
@@ -77,5 +89,16 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                   					array('controller' => 'category',
                   							'action' => 'add')));
     }
+
+    protected function _initLayoutHelper()
+	{
+		try {
+			$this->bootstrap('frontController');
+			// new Jacobi_Controller_Action_Helper_LayoutLoader();
+		} catch (Exception $e) {
+			echo  $e;
+		}
+		
+	}
 }
 

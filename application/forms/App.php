@@ -68,7 +68,8 @@ class Application_Form_App extends Zend_Form
         $cs_options = array();
         foreach ($cs as $c) 
         {
-                array_push($cs_options, array($c->id => $c->type_name.'-'.$c->name));
+                // var_dump($c);
+                array_push($cs_options, array($c->id => $c->type_name.'-'.$c->parent_name.'-'.$c->name));
         }
         $category_id->addMultiOptions($cs_options);       
     }

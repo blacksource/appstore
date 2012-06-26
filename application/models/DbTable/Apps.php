@@ -43,6 +43,12 @@ class Application_Model_DbTable_Apps extends Zend_Db_Table_Abstract
         $this->update($data, 'id='.$id);
     }
 
+    // update app properties
+    public function updateProperties($id, $app)
+    {
+        $this->update($app, 'id='.$id);
+    }
+
     public function save($app)
     {
         return $this->insert($app);

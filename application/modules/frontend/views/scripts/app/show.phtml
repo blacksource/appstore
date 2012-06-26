@@ -1,0 +1,34 @@
+<div class="sect">
+	<div class="crumb">当前位置：<a href="/android.html" target="_self">
+		Android首页</a> &gt; <a href="#" target="_self"><?=$this->category->name?></a> &gt; <?=$this->app->name?>
+	</div>
+</div>
+
+<div class="sect">
+	<div class="arti">
+		<div class="arti-hd">
+            <div class="arti-hd-c">
+            	<div class="arti-hd-c-content"></div>
+            </div>
+            <span class="arti-hd-l"></span>
+            <span class="arti-hd-r"></span>
+        </div>
+
+        <div class="arti-bd">
+        	<div class="arti-bd-content">
+        		<div class="clearfix">
+        			<!--right begin-->
+        			<div class="sect-main-s">
+        				<?php echo $this->partial('app/right.phtml', array('app'=>$this->app, 'category'=>$this->category, 'imgs'=>$this->imgs)); ?>
+        			</div>
+        			<!--right end->
+        			<!--left begin-->
+        			<div class="sect-side-s">
+        				<?php echo $this->partial('app/left.phtml', array('app'=>$this->app)); ?>
+        			</div>
+        			<!--left end-->
+        		</div>
+        	</div>
+        </div>
+	</div>
+</div>
