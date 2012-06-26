@@ -19,9 +19,10 @@
             </div>
 
             <div class="arti-s-bd p-v20 bg-solid-b">
+
             	<div class="yui3-tabs-panel yui3-tabs-panel-selected">
-                    <div class="f14px download-app-desc" id="app-desc" style="height: 75px; ">
-                    	<p class="c-orange" >编辑点评：<?=$this->app->comment?></p>
+                    <div class="t-l p-v5">
+                    	<!--<p class="c-orange" >编辑点评：<?=$this->app->comment?></p>-->
                     	<div>
                         	<?=$this->app->description?>
                         </div>
@@ -57,7 +58,7 @@
 	        				<ul class="shot-list" id="shot-list" style="left:0px">
 	        					<? foreach ($this->imgs as $img) { ?>
 	        						<li>
-	        							<div class="box-download-shot"><img src="<?=$img->img_path?>" width="200" height="300" title="点击查看大图"></div>
+	        							<div class="box-download-shot"><img src="<?=$img->img_path?>" width="200" height="300"></div>
 	        						</li>	
 	        					<? } ?>
 	        				</ul>

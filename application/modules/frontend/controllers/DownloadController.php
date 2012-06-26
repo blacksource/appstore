@@ -88,8 +88,10 @@ class DownloadController extends Zend_Controller_Action
         				));
 
         $app = $apps->getAppPath($id);
-        echo $app->app_path;
         $file = $app->app_path;
+
+ 		$this->_redirect($file);
+ 		return;
  		
 		if (file_exists($file)) 
 		{
