@@ -1,0 +1,29 @@
+<li class="li-hori-w122">
+	<div class="box-app">
+        <p>
+            <a href="/android/app/<?=$this->app->id?>.html" class="img-app"><i class="img-app-none">
+            </i>
+                <img src="<?=$this->app->logo?>"
+                    width="70" height="70">
+            </a>
+        </p>
+        <h5 class="t-overflow m-t8">
+            <a href="/android/app/<?=$this->app->id?>.html"><?=$this->app->name?></a></h5>
+        <p class="app-price-line">
+            <span class="price-new"><i></i>?????????</span>
+        </p>
+        <p class="app-download-line" style="display: none;">
+            <a href="/download/<?=$this->app->id?>"class="button-cmn button-s1">免费下载</a>
+        </p>
+        <div class="box-app-detail">
+            <h2 class="f-s2"><?=$this->app->name?></h2>
+            <h2 class="price-new c-orange f-bold">免费</h2>
+            <p class="m-t5 c-gray">????????</p>
+            <p class="m-t5"><span class="fl-r c-gray">35029人推荐</span></p>
+            <p>
+                <span class="vote-text c-orange"></span><span class="vote-column"><i style="width: <?=$this->app->star?>%">
+                </i></span><span class="vote-text c-gray">0.0</span>
+            </p>
+        </div>
+    </div>
+</li>

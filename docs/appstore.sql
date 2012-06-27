@@ -65,6 +65,9 @@ CREATE TABLE `apps` (
   `status` char(1) DEFAULT 'D',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+alter table apps add column meta_keyword varchar(255);
+alter table apps add column meta_desc varchar(255);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
