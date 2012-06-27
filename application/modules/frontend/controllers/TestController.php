@@ -13,5 +13,10 @@ class TestController extends Zend_Controller_Action
 
 		$apps = new Application_Model_DbTable_Apps();
         $this->view->app = $apps->getById($id);
+
+        // get category by app`s category_id
+        $category_id = $this->view->app->category_id;
+        $categories = new Application_Model_DbTable_Categories();
+        $this->view->category = $categories->getById($category_id);
 	}
 }
