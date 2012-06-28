@@ -19,4 +19,22 @@ class TestController extends Zend_Controller_Action
         $categories = new Application_Model_DbTable_Categories();
         $this->view->category = $categories->getById($category_id);
 	}
+
+	public function categoryAction()
+	{
+		$this->_helper->layout->setLayout('admin');
+		$ids = $this->_request->getParam('ids');
+		if($ids == "")
+		{
+			return;
+		}
+		$idarray = explode(",", $ids);
+		$apps = array();
+		$appsDB = new Application_Model_DbTable_Apps();
+		foreach ($idarray as $id) {
+			$app = $appsDB->getById($id);
+			array_push($apps, $app);
+		}
+		$this->view->apps = $apps;
+	}
 }

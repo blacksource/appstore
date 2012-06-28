@@ -1,0 +1,24 @@
+<li class="li-hori-w240">
+    <div class="m-h15">
+        <p class="t-c">
+            <a href="#" class="btn-cat" target="_self">Topic</a></p>
+        <ol class="m-t25 list-category-top">
+            <?php foreach ($this->apps as $app) {?>
+                <li class="li-rank-first">
+                    <div class="li-rank-hd">
+                        <span class="li-rank-thumb"><a href="/android/app/<?=$app->id?>.html"
+                            class="img-app-s"><i class="img-app-s-none"></i>
+                            <img src="<?=$app->logo?>"
+                                width="30" height="30"></a></span>
+                        <h5 class="li-rank-title t-overflow">
+                            <a href="/android/app/<?=$app->id?>.html"><?=$app->name?></a></h5>
+                        <span class="li-rank-desc-s" style=""><span class="c-gray"><?=$app->download_times?>人推荐</span></span>
+                        <div class="li-rank-download" style="display: none;">
+                            <a href="/download/<?=$app->id?>" class="button-cmn button-s1">免费下载 </a>
+                        </div>
+                    </div>
+                </li>
+            <?}?>
+        </ol>
+    </div>
+</li>
