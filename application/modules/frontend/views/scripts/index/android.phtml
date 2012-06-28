@@ -7,7 +7,7 @@
         <!--游戏推荐-->
         <?php echo $this->partial('index/android/game.phtml'); ?>
     </div>
-        <?php echo $this->partial('index/android/hot_game.phtml'); ?>
+        <?php echo $this->partial('index/android/hot_game.phtml', array('games'=>$this->games)); ?>
 </div>
 <div class="sect m-t15">
     <div class="sect-main">

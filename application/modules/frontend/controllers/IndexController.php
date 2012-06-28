@@ -25,6 +25,7 @@ class IndexController extends Zend_Controller_Action
     {
         $this->_helper->layout->setLayout('android');
 
+        /*
         $recommendApps = new Application_Model_DbTable_RecommendApps();
         // get install_recommend
         $this->views->recommend_games = $recommendApps->getTopByType('game', 12);
@@ -34,9 +35,12 @@ class IndexController extends Zend_Controller_Action
         
         // get new_recommend
         $this->views->recommend_news = $recommendApps->getTopByType('game', 12);
+        */
 
         // get game top
-
+        $apps = new Application_Model_DbTable_Apps();
+        $this->view->games = $apps->getByParentCategory(2);
+        
         // get app top
 
         //
