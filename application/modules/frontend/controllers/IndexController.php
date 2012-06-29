@@ -39,10 +39,11 @@ class IndexController extends Zend_Controller_Action
 
         // get game top
         $apps = new Application_Model_DbTable_Apps();
-        $this->view->games = $apps->getByParentCategory(2);
+        $this->view->hot_games = $apps->getByParentCategory(2);
         
         // get app top
-
+        $apps = new Application_Model_DbTable_Apps();
+        $this->view->hot_apps = $apps->getByParentCategory(1);
         //
     }
 }

@@ -7,7 +7,7 @@
         <!--游戏推荐-->
         <?php echo $this->partial('index/android/game.phtml'); ?>
     </div>
-        <?php echo $this->partial('index/android/hot_game.phtml', array('games'=>$this->games)); ?>
+        <?php echo $this->partial('index/android/hot_list.phtml', array('hot_name'=>'热门游戏排行榜', 'hot_apps'=>$this->hot_games)); ?>
 </div>
 <div class="sect m-t15">
     <div class="sect-main">
@@ -15,5 +15,5 @@
         <div class="arti m-t15"></div>
         <?php echo $this->partial('index/android/hot_category.phtml'); ?>
     </div>
-    <?php echo $this->partial('index/android/hot_app.phtml'); ?>
+    <?php echo $this->partial('index/android/hot_list.phtml', array('hot_name'=>'热门应用排行榜', 'hot_apps'=>$this->hot_apps)); ?>
 </div>
