@@ -15,6 +15,18 @@ class Application_Model_DbTable_RecommendApps extends Zend_Db_Table_Abstract
         return $this->fetchAll($select);
     }
 
+    public function getTopByType($type, $limit)
+    {
+        $select = $this->select()
+            ->setIntegrityCheck(false)
+            ->from(array('a'=>'apps'), array('id', 'name', 'star', 'logo', 'price', 'comment', 'download_times'))
+            ->joinLeft(array('c'=>'categories'), 'a.category_id=c.id', array('category_name'=>'name'))
+            ->joinLeft(array('r'=>'recommend_apps'), 'a.id=r.app_id')
+            ->where('r.type=?', $type)
+            ->limit($limit);
+        return $this->fetchAll($select);
+    }
+
     /*
     public function getByCategory($category_id, $limit)
     {
