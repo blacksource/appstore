@@ -31,4 +31,3 @@ class Application_Model_DbTable_AppCategories extends Zend_Db_Table_Abstract
         return $this->insert($app_category);
     }
 }
-

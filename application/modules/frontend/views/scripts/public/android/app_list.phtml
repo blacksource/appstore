@@ -1,0 +1,43 @@
+<div class="arti-bd">
+    <div class="arti-bd-content">               
+        <div class="yui3-appsview-content" id="appsview">
+            <div class="yui3-appsview-list">
+                <ul class="list-appsview clearfix">
+                    <?foreach ($this->apps as $app) {?>
+                        <li>
+                            <div class="m-h15 p-v25">
+                                <div class="apps-info">
+                                    <div class="apps-info-text">
+                                        <div class="apps-info-text-content">
+                                            <p class="f-s3 t-overflow"><a href="/android/app/<?=$app->id?>.html"><?=$app->name?></a></p>
+                                            <p class="m-t5"><span class="c-gray"><?=$app->download_times?>人下载</span></p>
+                                            <p class="m-t5">
+                                                <a href="/download/<?=$app->id?>" class="fl-r button-cmn button-s1">免费下载</a>
+                                                <span class="vote-column"><i style="width:<?=$app->star?>%"></i></span><span class="vote-text"><?=$app->star/20?></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="apps-info-img">
+                                        <a href="/android/app/<?=$app->id?>.html" class="img-app">
+                                            <i class="img-app-none"></i>
+                                            <i class="img-app-"></i>
+                                            <img src="<?=$app->logo?>" width="70" height="70">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    <?}?>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="yui3-appsview-page">
+            <?php $pre_url = '/android/app_category_'?>
+            <a href="<?=$pre_url.($this->currentPage-1)?>.html" target="_self" class="yui3-appsview-page-ctrl yui3-appsview-page-disabled">上一页</a>
+            <?php for ($i=1; $i <= $this->totalPage; $i++) { ?> 
+                <a title="第<?=$i?>页" class="yui3-appsview-page-num yui3-appsview-page-current" "<?=$pre_url.$i.'.html'?>"><?=$i?></a>
+            <?}?>
+            <a title="第2页" href="/android/app/allapp/all-download-2.html" target="_self" class="yui3-appsview-page-ctrl">下一页</a>
+        </div> -->
+    </div>
+</div>

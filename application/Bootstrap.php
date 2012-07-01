@@ -30,33 +30,80 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                   					array('controller' => 'index',
                   							'action' => 'iphone')));
 
-		$router->addRoute('topic', new Zend_Controller_Router_Route_Regex(
-					    '(android|iphone|ipad)/(topic|app|game).html',
-					    array(
-					        'controller' => 'category',
-					        'action'     => 'index'
-					    ),
-					    array(
-					    	1 => 'type_name',
-					    	2 => 'category'
-					    ),
-					    '%s.html'
-					));
-		
+		$router->addRoute('game_html', new Zend_Controller_Router_Route_Regex(
+		    '(android|iphone|ipad)/game.html',
+		    array(
+		        'controller' => 'category',
+		        'action'     => 'game'
+		    ),
+		    '%s.html'
+		));
+
+		$router->addRoute('app_html', new Zend_Controller_Router_Route_Regex(
+		    '(android|iphone|ipad)/app.html',
+		    array(
+		        'controller' => 'category',
+		        'action'     => 'app'
+		    ),
+		    '%s.html'
+		));
+
+		$router->addRoute('recommend_html', new Zend_Controller_Router_Route_Regex(
+		    '(android|iphone|ipad)/(install|game|new)_recommend.html',
+		    array(
+		        'controller' => 'recommend',
+		        'action'     => 'index'
+		    ),
+		    array(
+		    	1 => 'type_name',
+		    	2 => 'type',
+		    ),
+		    '%s.html'
+		));		
+
 		$router->addRoute('category', new Zend_Controller_Router_Route_Regex(
-					    '(android|iphone|ipad)/(topic|app|game)_(\d+)_(\d+)\.html',
-					    array(
-					        'controller' => 'category',
-					        'action'     => 'index'
-					    ),
-					    array(
-					    	1 => 'type_name',
-					    	2 => 'category',
-					    	3 => 'category_id',
-					    	4 => 'page'
-					    ),
-					    '%s.html'
-					));
+			    '(android|iphone|ipad)/(topic|app|game)_(\d+)_(\d+)\.html',
+			    array(
+			        'controller' => 'category',
+			        'action'     => 'index'
+			    ),
+			    array(
+			    	1 => 'type_name',
+			    	2 => 'category',
+			    	3 => 'category_id',
+			    	4 => 'page'
+			    ),
+			    '%s.html'
+			));
+
+		// $router->addRoute('topic', new Zend_Controller_Router_Route_Regex(
+		// 			    '(android|iphone|ipad)/(topic|app|game).html',
+		// 			    array(
+		// 			        'controller' => 'category',
+		// 			        'action'     => 'index'
+		// 			    ),
+		// 			    array(
+		// 			    	1 => 'type_name',
+		// 			    	2 => 'category'
+		// 			    ),
+		// 			    '%s.html'
+		// 			));
+		
+
+		// $router->addRoute('category', new Zend_Controller_Router_Route_Regex(
+		// 			    '(android|iphone|ipad)/(topic|app|game)_(\d+)_(\d+)\.html',
+		// 			    array(
+		// 			        'controller' => 'category',
+		// 			        'action'     => 'index'
+		// 			    ),
+		// 			    array(
+		// 			    	1 => 'type_name',
+		// 			    	2 => 'category',
+		// 			    	3 => 'category_id',
+		// 			    	4 => 'page'
+		// 			    ),
+		// 			    '%s.html'
+		// 			));
 
 		$router->addRoute('app', new Zend_Controller_Router_Route_Regex(
 					    '(android|iphone|ipad)/app/(\d+)\.html',

@@ -63,17 +63,34 @@ class Application_Model_DbTable_Apps extends Zend_Db_Table_Abstract
 
     public function getByParentCategory($category_id)
     {
-        // $select = $this->select()
-        //     ->limit(13);
-        // return $this->fetchAll($select);
-
         $select = $this->select()
             ->setIntegrityCheck(false)
-            ->from(array('a'=>'apps'), array('id','name', 'logo', 'star'))
+            ->from(array('a'=>'apps'), array('id','name', 'logo', 'star', 'download_times'))
             ->joinLeft(array('c'=>'categories'), 'a.category_id=c.id', array('category_name'=>'name'))
             ->where('c.parent_id=?', $category_id)
             ->limit(13);
         return $this->fetchAll($select);
+    }
+
+    public function getPageByParentCategory($category_id, $page, $pageSize)
+    {
+        $select = $this->select()
+            ->setIntegrityCheck(false)
+            ->from(array('a'=>'apps'), array('id','name', 'logo', 'star', 'download_times'))
+            ->joinLeft(array('c'=>'categories'), 'a.category_id=c.id', array('category_name'=>'name'))
+            ->where('c.parent_id=?', $category_id)
+            ->limit($pageSize, ($page-1)*$pageSize);
+        return $this->fetchAll($select);
+    }
+
+    public function getCountByParentCategory($category_id)
+    {
+        $select = $this->select()
+            ->setIntegrityCheck(false)
+            ->from(array('a'=>'apps'), array('app_count'=>'count(*)'))
+            ->joinLeft(array('c'=>'categories'), 'a.category_id=c.id')
+            ->where('c.parent_id=?', $category_id);
+        return $this->fetchRow($select);
     }
 }
 

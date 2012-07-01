@@ -41,34 +41,30 @@ class CategoryController extends Zend_Controller_Action
 
     public function gameAction()
     {
-        $this->_helper->layout->setLayout('android');    
+        $this->_helper->layout->setLayout('android');  
+        
+        $page = $this->_request->getParam('page') == "" ? 1 : $this->_request->getParam('page');
+        $pageSize = 20;
+
+        $apps = new Application_Model_DbTable_Apps();
+        $app_count = $apps->getCountByParentCategory(2);
+        $this->view->totalPage = 0;//ceil($app_count/$pageSize);
+        $this->view->games = $apps->getPageByParentCategory(2, $page, $pageSize);
+    
     }
 
-    /*
-    public function addAction()
+    public function appAction()
     {
-        $this->_helper->layout->setLayout('admin');
-        $form = new Application_Form_Category();
-        $this->view->form = $form;
+        $this->_helper->layout->setLayout('android');  
+        
+        $page = $this->_request->getParam('page') == "" ? 1 : $this->_request->getParam('page');
+        $pageSize = 20;
 
-        if($this->getRequest()->isPost())
-        {
-            $formData = $this->getRequest()->getPost();
-            if ($form->isValid($formData)) 
-            {
-                $category = $form->getValues();
-                $categories = new Application_Model_DbTable_Categories();
-
-                try {
-                $category_id = $categories->save($category);
-                    
-                } catch (Exception $e) {
-                    echo $e;
-                }
-
-                echo 'save success category_id='.$category_id;
-            }
-        }
-    }*/
+        $apps = new Application_Model_DbTable_Apps();
+        $app_count = $apps->getCountByParentCategory(1);
+        $this->view->totalPage = 0;//ceil($app_count/$pageSize);
+        $this->view->apps = $apps->getPageByParentCategory(1, $page, $pageSize);
+    
+    }
 }
 
