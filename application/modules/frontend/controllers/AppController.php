@@ -12,7 +12,6 @@ class AppController extends Zend_Controller_Action
     {
         // get params
         $this->_helper->layout->setLayout('android_app');
-        $this->view->type_name = $this->_request->getParam('type_name');
     	$id = $this->_request->getParam('id');
         
         // get app detail by app_id

@@ -5,16 +5,6 @@ class Application_Model_DbTable_RecommendApps extends Zend_Db_Table_Abstract
 
     protected $_name = 'recommend_apps';
 
-    public function getByType($type)
-    {
-        $select = $this->select()
-            ->setIntegrityCheck(false)
-            ->from(array('a'=>'apps'), array('id', 'name', 'star', 'logo', 'download_times'))
-            ->joinLeft(array('r'=>'recommend_apps'), 'a.id=r.app_id')
-            ->where('r.type=?', $type);
-        return $this->fetchAll($select);
-    }
-
     public function getTopByType($type, $limit)
     {
         $select = $this->select()
@@ -24,6 +14,16 @@ class Application_Model_DbTable_RecommendApps extends Zend_Db_Table_Abstract
             ->joinLeft(array('r'=>'recommend_apps'), 'a.id=r.app_id', array('rid'=>'id'))
             ->where('r.type=?', $type)
             ->limit($limit);
+        return $this->fetchAll($select);
+    }
+
+    public function getByType($type)
+    {
+        $select = $this->select()
+            ->setIntegrityCheck(false)
+            ->from(array('a'=>'apps'), array('id', 'name', 'star', 'logo', 'download_times'))
+            ->joinLeft(array('r'=>'recommend_apps'), 'a.id=r.app_id')
+            ->where('r.type=?', $type);
         return $this->fetchAll($select);
     }
 

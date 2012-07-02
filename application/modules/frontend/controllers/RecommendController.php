@@ -10,8 +10,6 @@ class RecommendController extends Zend_Controller_Action
 
     public function indexAction()
     {
-    	$this->_helper->layout->setLayout('android');
-
     	$type = $this->_request->getParam('type');
 
     	$recommendApps = new Application_Model_DbTable_RecommendApps();

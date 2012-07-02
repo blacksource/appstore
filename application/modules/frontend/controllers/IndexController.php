@@ -11,7 +11,6 @@ class IndexController extends Zend_Controller_Action
     public function indexAction()
     {
         $this->_redirect('android.html');
-        $this->render('android');
         $this->view->type_name = "android";
     }
 
@@ -23,8 +22,6 @@ class IndexController extends Zend_Controller_Action
 
     public function androidAction()
     {
-        $this->_helper->layout->setLayout('android');
-
         $recommendApps = new Application_Model_DbTable_RecommendApps();
         // get install_recommend
         $this->view->recommend_installs = $recommendApps->getTopByType('install', 12);

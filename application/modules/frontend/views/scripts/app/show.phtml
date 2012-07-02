@@ -12,19 +12,18 @@
             </div>
             <span class="arti-hd-l"></span>
             <span class="arti-hd-r"></span>
-        </div>
-
+            </div>
         <div class="arti-bd">
         	<div class="arti-bd-content">
         		<div class="clearfix">
         			<!--right begin-->
         			<div class="sect-main-s">
-        				<?php echo $this->partial('app/right.phtml', array('app'=>$this->app, 'category'=>$this->category, 'imgs'=>$this->imgs)); ?>
+        				<?php echo $this->partial('app/_right.phtml', array('app'=>$this->app, 'category'=>$this->category, 'imgs'=>$this->imgs)); ?>
         			</div>
         			<!--right end->
         			<!--left begin-->
         			<div class="sect-side-s">
-        				<?php echo $this->partial('app/left.phtml', array('app'=>$this->app)); ?>
+        				<?php echo $this->partial('app/_left.phtml', array('app'=>$this->app)); ?>
         			</div>
         			<!--left end-->
         		</div>

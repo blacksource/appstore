@@ -60,24 +60,22 @@ class Backend_AppController extends Zend_Controller_Action
             // upload icon
             $logoPath = $this->_helper->UploadFile($_FILES["appLogo"], $app->type_name);
             // update app and icon
-            if($appPath == "" && $logoPath == "")
+            if($appPath != "" || $logoPath != "")
             {
-                echo "save failed";
-                return;
+                if($appPath != "" && $logoPath == "")
+                {
+                    $appData = array('app_path'=>$appPath);    
+                }
+                elseif ($appPath == "" && $logoPath != "") 
+                {
+                    $appData = array('logo'=>$logoPath);
+                }
+                else
+                {
+                    $appData = array('logo'=>$logoPath, 'app_path'=>$appPath);    
+                }
+                $apps->updateProperties($appId, $appData);    
             }
-            if($appPath != "" && $logoPath == "")
-            {
-                $appData = array('app_path'=>$appPath);    
-            }
-            elseif ($appPath == "" && $logoPath != "") 
-            {
-                $appData = array('logo'=>$logoPath);
-            }
-            else
-            {
-                $appData = array('logo'=>$logoPath, 'app_path'=>$appPath);    
-            }
-            $apps->updateProperties($appId, $appData);
 
             // upload images
             $imgFiles = $_FILES["appImgs"];

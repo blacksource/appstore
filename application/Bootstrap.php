@@ -39,6 +39,19 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		    '%s.html'
 		));
 
+		$router->addRoute('category_html', new Zend_Controller_Router_Route_Regex(
+		    '(android|iphone|ipad)/category/(\d+)\.html',
+		    array(
+		        'controller' => 'category',
+		        'action'     => 'index'
+		    ),
+		    array(
+		    	1 => 'type_name',
+		    	2 => 'category_id'
+		    ),
+		    '%s.html'
+		));
+
 		$router->addRoute('app_html', new Zend_Controller_Router_Route_Regex(
 		    '(android|iphone|ipad)/app.html',
 		    array(

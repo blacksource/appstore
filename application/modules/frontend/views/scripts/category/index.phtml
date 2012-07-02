@@ -1,81 +1,30 @@
-<?php 
-	$this->headTitle("美眉安卓(Android)应用市场 美眉iPhone应用市场");
-?>
-<div class="content-box">
-	<div class="column-w">
-		<div class="qnav">
-			<li>
-				<a href="/index.html">首页</a> &gt;
-			</li>
-			<li>
-				<?= $this->category->parent_name?>&gt; 
-			</li>
-			<li>
-				<?= $this->category->name?> 
-			</li>
-		</div>
-		<div class="clear"></div>
+<div class="sect">
+	<div class="crumb">当前位置： <a target="_self" href="/android.html">Android首页</a>
+    &gt; <a target="_self" href="#"><?=$this->category->parent_name?></a>&gt;<a target="_self" href="#"><?=$this->category->name?></a> 
 	</div>
 </div>
-
-<div class="content-box">
-	<div class="column-lw-box">
-		<div class="column-lw">
-			<div class="title-lw">
-				<h1><div class="icon"></div><?php echo $this->category->name?></h1>
-			</div>
-			<div class="box-lr20">
-				<ul class="m_ptype">
-					<?php foreach ($this->apps as $app) { ?>
-						<li>
-							<dl>
-								<dt>
-									<a href="<?php echo '/'.$this->type_name.'/app/'.$app->id.'.html'?>" title="<?php echo $app->name?>"><? echo $app->name ?></a><span>(<?php echo $app->version ?>)</span><span style="color:#e69801;font-weight:bold;"></span><i class="df-star star-<?php echo $app->star?>"></i>
-								</dt>
-								<dd class="intro">
-									<?php echo mb_strlen($app->description,'utf-8') > 100 ? mb_substr($app->description,0,100,'utf-8').'...': $app->description; ?> 
-								</dd>
-								<dd>
-									<em title="">作者：<?php echo $app->developer ?></em>
-									<span>下载次数：<?php echo $app->download_times ?></span>
-								</dd>
-							</dl><!--m_tyr-->
-							<div class="m_pic">
-								<a href="<?php echo '/app/'.$app->id.'.html'?>"  class="category_img"><img src="<?php echo $app->logo?>" width="48" height="48"></a>
-							</div><!--/m_pic-->
-						</li>
-					<?php } ?>
-				</ul>
-				<div class="m_page mt20">
-					<div class="paging">
-						<span title="第一页" class="page_s">
-							<?php $pre_url = '/'.$this->type_name.'/'.$this->category_type.'_'.$this->category_id.'_'?>
-							<?php echo $this->currentPage==1 ? "上一页": "<a href='".$pre_url.($this->currentPage-1).".html'>上一页</a>"?>
-						</span>&nbsp;
-						<?php for ($i=1; $i <= $this->totalPage; $i++) { ?> 
-							<span class="<? echo $i==$this->currentPage ? 'curpage': ''?>" style="color:red">
-								<a href="<?php echo $pre_url.$i.'.html'?>"><?php echo $i ?></a>
-							</span>
-						<?php } ?>
-						<span class="page_s">
-							<?php echo $this->currentPage==$this->totalPage ? "下一页": "<a href='".$pre_url.($this->currentPage+1).".html'>下一页</a>"?>
+<div class="sect">
+	<div class="arti">
+		<div class="arti-hd arti-hd-bar">
+			<div class="arti-hd-c">
+				<div class="arti-hd-c-content">
+					<h3 class="arti-hd-title">
+						<span id="ico-android">
+							<span>全部应用</span>	
 						</span>
-					</div>
+					</h3>
 				</div>
-			</div><!--box-lr20 end-->
-		</div><!--column-lw end--><!--column-lw end-->
-	</div>
-
-	<div class="column-r-box">
-		<div class="column-r">
-			<h1><?php echo $this->category->parent_name?>列表</h1>
-			<ul class="sort-r font14">
-				<?php foreach ($this->categories as $category) { ?>
-					<li>
-						<a href="<?php echo '/'.$this->type_name.'/'.$this->category_type.'_'.$category->id.'_1.html'?>"><?php echo $category->name?></a>
-					</li>
-				<?php } ?>
-			</ul>
+        	</div>
+			<span class="arti-hd-l"></span>
+			<span class="arti-hd-r"></span>
+        </div>
+		<?= $this->partial('public/android/app_list.phtml', array('apps'=>$this->apps, 'totalPage'=>$this->totalPage)); ?>
+		<div class="arti-ft">
+			<div class="arti-ft-c">
+				<div class="arti-ft-c-content"></div>
+			</div>
+			<span class="arti-ft-l"></span>
+			<span class="arti-ft-r"></span>
 		</div>
-	</div><!--column-r end-->
+	</div>
 </div>
