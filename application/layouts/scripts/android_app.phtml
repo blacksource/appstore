@@ -4,8 +4,8 @@
 <head> 		
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
-    <meta name="Keywords" content="<?=$this->meta_key?>;手机应用,应用平台,应用市场,网易应用汇,限时免费,降价,手机游戏下载,手机应用下载,android,market,apk,安智,安卓,安致">
-    <meta name="Description" content="愤怒的小鸟夏日版">
+    <meta name="Keywords" content="<?=$this->app->meta_keyword?>,美眉应用,美眉应用中心,美眉应用市场,手机应用,应用平台,应用市场,手机游戏,手机游戏下载,手机应用下载,android,market,apk,安智,安卓,安致">
+    <meta name="Description" content="<?=$this->app->meta_desc?>,美眉应用,美眉应用中心,美眉应用市场,手机应用">
 
     <link href="/css/style.css" rel="stylesheet" type="text/css"> 
     <link href="/css/adp_1.4.1.1.css" type="text/css" rel="stylesheet">
@@ -13,8 +13,9 @@
 
     <script type="text/javascript" src="/js/jquery1.7.2.min.js" charset="utf-8"></script>
     <script src="/js/main.js" type="text/javascript"></script>
+    <script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
 
-<title>Android首页_网易应用中心</title>
+<title><?=$this->app->name?>_美眉应用中心</title>
 </head>
 <body>
     <div class="wrap">
@@ -23,21 +24,5 @@
         <?php echo $this->layout()->content; ?>
         <?php echo $this->partial('footer.phtml'); ?>
     </div>
-
-    <script type="text/javascript">
-        $(".tabs-2-list .yui3-tabs-trigger").click(function(){
-            $(".tabs-2-list .yui3-tabs-trigger").removeClass("yui3-tabs-trigger-selected");
-            $(this).addClass("yui3-tabs-trigger-selected");
-            $(".arti-s-bd .yui3-tabs-panel").removeClass("yui3-tabs-panel-selected");
-            if($(this).html() == "简介")
-            {
-               $(".arti-s-bd .yui3-tabs-panel:first").addClass("yui3-tabs-panel-selected");    
-            }
-            else
-            {
-                $(".arti-s-bd .yui3-tabs-panel:last").addClass("yui3-tabs-panel-selected");   
-            }
-        })
-    </script>
 </body>
 </head>

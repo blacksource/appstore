@@ -1,5 +1,5 @@
 $(function(){
-    var trigger = setInterval(tabTrigger, 3000);
+    var trigger = setInterval(tabTrigger, 5000);
 
     $(".yui3-tabs-trigger").mouseover(function(){
         clearInterval(trigger);
@@ -7,7 +7,7 @@ $(function(){
         triggerImg(index);
     });
     $(".yui3-tabs-trigger").mouseout(function(){
-        trigger = setInterval(tabTrigger, 3000);
+        trigger = setInterval(tabTrigger, 5000);
     });
 
     function tabTrigger(){
@@ -94,4 +94,34 @@ $(function(){
             $(".yui3-imagelist-arrow-right").addClass("yui3-imagelist-arrow-right-disabled");
         }
     });
+
+    $(".tabs-2-list .yui3-tabs-trigger").click(function(){
+        $(".tabs-2-list .yui3-tabs-trigger").removeClass("yui3-tabs-trigger-selected");
+        $(this).addClass("yui3-tabs-trigger-selected");
+        $(".arti-s-bd .yui3-tabs-panel").removeClass("yui3-tabs-panel-selected");
+        if($(this).html() == "简介")
+        {
+           $(".arti-s-bd .yui3-tabs-panel:first").addClass("yui3-tabs-panel-selected");    
+        }
+        else
+        {
+            $(".arti-s-bd .yui3-tabs-panel:last").addClass("yui3-tabs-panel-selected"); 
+        }
+    });
+
+    // goto_top begin
+    $("#go_top").hide();
+    $(window).scroll(function(){
+        if ($(window).scrollTop()>10){
+            $("#go_top").fadeIn(500);
+        }
+        else{
+            $("#go_top").fadeOut(500);
+        }
+    });
+    $("#go_top").click(function(){
+        $('body,html').animate({scrollTop:0},1000);
+        return false;
+    });
+    // goto_top end
 })

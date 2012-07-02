@@ -66,5 +66,15 @@ class CategoryController extends Zend_Controller_Action
         $this->view->apps = $apps->getPageByParentCategory(1, $page, $pageSize);
     
     }
+
+    public function subjectAction()
+    {
+        $this->_helper->layout->setLayout('android');
+    }
+
+    public function topAction()
+    {
+        $this->_helper->layout->setLayout('android');
+    }
 }
 

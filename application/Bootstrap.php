@@ -59,7 +59,24 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		    	2 => 'type',
 		    ),
 		    '%s.html'
-		));		
+		));
+
+		$router->addRoute('subject_html', new Zend_Controller_Router_Route_Regex(
+		    '(android|iphone|ipad)/subject.html',
+		    array(
+		        'controller' => 'category',
+		        'action'     => 'subject'
+		    ),
+		    '%s.html'
+		));
+		$router->addRoute('top_html', new Zend_Controller_Router_Route_Regex(
+		    '(android|iphone|ipad)/top.html',
+		    array(
+		        'controller' => 'category',
+		        'action'     => 'top'
+		    ),
+		    '%s.html'
+		));
 
 		$router->addRoute('category', new Zend_Controller_Router_Route_Regex(
 			    '(android|iphone|ipad)/(topic|app|game)_(\d+)_(\d+)\.html',
