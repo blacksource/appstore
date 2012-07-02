@@ -28,6 +28,7 @@ class IndexController extends Zend_Controller_Action
         $recommendApps = new Application_Model_DbTable_RecommendApps();
         // get install_recommend
         $this->view->recommend_installs = $recommendApps->getTopByType('install', 12);
+        var_dump($this->view->recommend_installs);
         // // get game_recommend
         $this->view->recommend_games = $recommendApps->getTopByType('game', 12);
         // // get new_recommend
