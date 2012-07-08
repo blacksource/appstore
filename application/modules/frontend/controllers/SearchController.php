@@ -10,5 +10,10 @@ class SearchController extends Zend_Controller_Action
 
     public function indexAction()
     {
+    	$word = $this->_request->getParam('wd');
+
+    	$apps = new Application_Model_DbTable_Apps();
+    	$this->view->apps = $apps->search($word);
+    	$this->view->totalPage = 0;
     }
 }

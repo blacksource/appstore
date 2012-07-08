@@ -1,1 +1,36 @@
-aaaaaaaaaaaa
+<div class="sect">
+	<div class="crumb">当前位置： <a target="_self" href="/android.html">Android首页</a></div>
+</div>
+
+<div class="sect">
+	<div class="arti">
+		<div class="arti-hd arti-hd-bar">
+			<div class="arti-hd-c">
+				<div class="arti-hd-c-content">
+					<h3 class="arti-hd-title">
+						<span id="ico-android">
+							<span>查找结果</span>	
+						</span>
+					</h3>
+				</div>
+        	</div>
+			<span class="arti-hd-l"></span>
+			<span class="arti-hd-r"></span>
+        </div>
+        <?if(count($this->apps) > 0) {
+			echo $this->partial('public/android/app_list.phtml', array('apps'=>$this->apps, 'totalPage'=>$this->totalPage));
+		}
+		else{?>
+			<div style="text-align:center" class="arti-bd" >
+				<h3 style="font-size: 14px;font-weight: bold;">很抱歉，没有匹配的结果!</h3>
+			</div>
+		<?}?>
+		<div class="arti-ft">
+			<div class="arti-ft-c">
+				<div class="arti-ft-c-content"></div>
+			</div>
+			<span class="arti-ft-l"></span>
+			<span class="arti-ft-r"></span>
+		</div>
+	</div>
+</div>

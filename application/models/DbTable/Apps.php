@@ -34,8 +34,19 @@ class Application_Model_DbTable_Apps extends Zend_Db_Table_Abstract
     public function search($name)
     {
         $select = $this->select()
-                ->where("name like '%?%'", $name);
-        return $this->fetchAll($select);           
+            ->setIntegrityCheck(false)
+            ->from(array('a'=>'apps'), array('id','name', 'logo', 'star', 'download_times'))
+            ->joinLeft(array('c'=>'categories'), 'a.category_id=c.id', array('category_name'=>'name'))
+            ->where("a.name like ?", '%'.$name.'%');
+        return $this->fetchAll($select);
+
+        // $sql="select a.id, a.name, a.logo, a.star, a.download_times, c.name as category_name from apps a inner join categories c on a.category_id=c.id ";
+        // $sql = $sql."where a.name like '%".$name."%'";
+        // // file_put_contents("c://a.txt",$sql); 
+        // $sql=$this->_db->quoteInto($sql,'');
+        // $result=$this->_db->query($sql);
+        // $result=$result->fetchAll();
+        // return $result;    
     }
 
     public function getByParentCategory($category_id)

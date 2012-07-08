@@ -1,18 +1,18 @@
 $(function(){
     var trigger = setInterval(tabTrigger, 5000);
 
-    $(".yui3-tabs-trigger").mouseover(function(){
+    $(".slide-side .yui3-tabs-trigger").mouseover(function(){
         clearInterval(trigger);
-        var index = $(".yui3-tabs-trigger").index(this);
+        var index = $(".slide-side .yui3-tabs-trigger").index(this);
         triggerImg(index);
     });
-    $(".yui3-tabs-trigger").mouseout(function(){
+    $(".slide-side .yui3-tabs-trigger").mouseout(function(){
         trigger = setInterval(tabTrigger, 5000);
     });
 
     function tabTrigger(){
-        var imgs = $(".yui3-tabs-panel");
-        var selected = $(".yui3-tabs-panel-selected");
+        var imgs = $(".slide-main .yui3-tabs-panel");
+        var selected = $(".slide-main .yui3-tabs-panel-selected");
         var index = imgs.index(selected);
         if(++index >= imgs.length -1)
         {
@@ -22,17 +22,17 @@ $(function(){
     }
 
     function triggerImg(index) {
-        var tabs = $(".yui3-tabs-trigger");
-        tabs.removeClass("yui3-tabs-trigger-selected");
+        var tabs = $(".slide-side .yui3-tabs-trigger");
+        tabs.removeClass(".slide-side yui3-tabs-trigger-selected");
         var tab = tabs.eq(index);
         tab.addClass("yui3-tabs-trigger-selected");
 
-        $(".yui3-tabs-panel-selected").fadeOut();
-        var imgs = $(".yui3-tabs-panel");
+        $(".slide-main .yui3-tabs-panel-selected").fadeOut();
+        var imgs = $(".slide-main .yui3-tabs-panel");
         imgs.removeClass("yui3-tabs-panel-selected");
         var img = imgs.eq(index);
         img.addClass("yui3-tabs-panel-selected");
-        $(".yui3-tabs-panel-selected").fadeIn();
+        $(".slide-main .yui3-tabs-panel-selected").fadeIn();
     }
 
    
