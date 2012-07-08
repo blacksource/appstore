@@ -27,7 +27,6 @@ class Application_Form_App extends Zend_Form
         $price = new Zend_Form_Element_Text('price');
         $price->setLabel('price');
 
-
         $version = new Zend_Form_Element_Text('version');
         $version->setLabel('version');
 

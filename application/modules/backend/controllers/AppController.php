@@ -9,7 +9,6 @@ class Backend_AppController extends Zend_Controller_Action
         {
             $this->_redirect("backend/auth/login");
         };
-
         $this->_helper->layout->setLayout('admin');
         $form = new Application_Form_App();
         $this->view->form = $form;
