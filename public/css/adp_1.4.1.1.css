@@ -4,7 +4,7 @@ p{ margin:0;}
 a{ color:#2b2b2b;}
 a:visited{ color:#83006f;}
 a:hover{ color:#ba2636; text-decoration: underline;}
-body{ font:normal 12px/1.75 "\5B8B\4F53",sans-serif; color:#2b2b2b;}
+body{ font:normal 12px/1.75 "\5B8B\4F53",sans-serif; color:#2b2b2b; background-color:#F7F7F7;}
 
 .yui3-js-enabled .yui3-overlay-loading { position:absolute; top:-1000em; left:-1000em;}
 .yui3-js-enabled .yui3-tabs-loading { visibility: hidden;}
@@ -617,7 +617,7 @@ body{ font:normal 12px/1.75 "\5B8B\4F53",sans-serif; color:#2b2b2b;}
 .search-item .search-app-price { width:80px; text-align:right; white-space:nowrap; overflow:hidden;}
 .search-item .price-prev, .search-item .price-new { height:21px; line-height:21px}
 
-.bnav{ margin-right:auto; margin-left:auto; width:960px; height:78px; color:#b1b1a7; background:url(http://img1.cache.netease.com/apps/v2/img/bg10.png) no-repeat 0 0;}
+.bnav{ margin-right:auto; margin-left:auto; width:960px; height:78px; color:#b1b1a7; background:url(/images/bg10.png) no-repeat 0 0;}
 .bnav a, .bnav a:visited { color:#727171;}
 .bnav a:hover { color:#BA2636;}
 .bnav-download a:hover, .bnav-top a:hover { color:#727171;}
@@ -1006,7 +1006,7 @@ body{ font:normal 12px/1.75 "\5B8B\4F53",sans-serif; color:#2b2b2b;}
 .bg-date { height:22px; width:90px; background:url(http://img6.cache.netease.com/apps/dc1109/img/bg15.png) no-repeat 0 0; line-height:22px; text-align:center; color:#727171; display:inline-block; vertical-align:baseline;}
 
 /* buttons */
-.btn-cmn { width:110px; height:21px; line-height:21px; text-align:center; display:inline-block; color:#2b2b2b; background:url(http://img1.cache.netease.com/apps/dc1109/img/btn1.png) no-repeat -360px 0; border:none; cursor:pointer; font-size:12px;}
+.btn-cmn { width:110px; height:21px; line-height:21px; text-align:center; display:inline-block; color:#2b2b2b; background:url(/images/btn1.png) no-repeat -360px 0; border:none; cursor:pointer; font-size:12px;}
 .btn-cmn:visited, .btn-cmn:hover { color:#2b2b2b; text-decoration:none;}
 .btn-s1 { width:70px; background-position:-360px -40px;}
 .btn-s2 { width:90px; background-position:-440px -40px;}

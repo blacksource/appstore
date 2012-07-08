@@ -28,7 +28,8 @@ class CategoryController extends Zend_Controller_Action
         $app_count = $apps->getCountByParentCategory(2);
         $this->view->totalPage = 0;//ceil($app_count/$pageSize);
         $this->view->games = $apps->getPageByParentCategory(2, $page, $pageSize);
-    
+        
+        $this->view->nav_name = "游戏";
     }
 
     public function appAction()
@@ -40,15 +41,18 @@ class CategoryController extends Zend_Controller_Action
         $app_count = $apps->getCountByParentCategory(1);
         $this->view->totalPage = 0;//ceil($app_count/$pageSize);
         $this->view->apps = $apps->getPageByParentCategory(1, $page, $pageSize);
-    
+        
+        $this->view->nav_name = "应用";
     }
 
     public function subjectAction()
     {
+        $this->view->nav_name = "专题";
     }
 
     public function topAction()
     {
+        $this->view->nav_name = "排行";
     }
 }
 

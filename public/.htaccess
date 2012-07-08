@@ -3,7 +3,5 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
-RewriteCond %{HTTP:Host} ^mmapp\.me$ 
-RewriteRule (.*) http\://www\.mmapp\.me/$1 [NC,R=301]
 RewriteRule ^.*$ - [NC,L]
 RewriteRule ^.*$ index.php [NC,L]

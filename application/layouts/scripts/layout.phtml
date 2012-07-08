@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <link href="/css/adp_1.4.1.1.css" type="text/css" rel="stylesheet">
-    <link rel="shortcut icon" href="http://www.163.com/favicon.ico">
+    <link rel="shortcut icon" href="/images/favicon.ico">
     <link type="text/css" rel="stylesheet" href="/css/yui3.css" charset="utf-8">
     <script type="text/javascript">
       var _gaq = _gaq || [];
@@ -24,7 +24,7 @@
 </head>
 <body>
     <div class="wrap">
-        <?php echo $this->partial('header.phtml', array('app_class'=>'Android')); ?>
+        <?php echo $this->partial('header.phtml', array('app_class'=>'Android', 'nav_name'=>$this->nav_name)); ?>
         <?php echo $this->partial('ads.phtml'); ?>
         <?php echo $this->layout()->content; ?>
         <?php echo $this->partial('footer.phtml'); ?>

@@ -12,19 +12,19 @@
             <div class="nav-sub">
                 <ul>
                     <li class="nav-sub-li nav-sub-li-first">
-                        <a href="/android.html" class="nav-sub-item  nav-sub-item-current  " target="_self"><span>首页</span></a>
+                        <a href="/android.html" class="nav-sub-item <?=$this->nav_name==''?'nav-sub-item-current':'' ?>" target="_self"><span>首页</span></a>
                     </li>
                     <li class="nav-sub-li">
-                        <a href="/android/game.html" target="_self" class="nav-sub-item"><span>游戏</span></a> 
+                        <a href="/android/game.html" target="_self" class="nav-sub-item <?=$this->nav_name=='游戏'?'nav-sub-item-current':'' ?>"><span>游戏</span></a> 
                     </li>
                     <li class="nav-sub-li">
-                        <a href="/android/app.html" target="_self" class="nav-sub-item"><span>应用 </span></a>
+                        <a href="/android/app.html" target="_self" class="nav-sub-item <?=$this->nav_name=='应用'?'nav-sub-item-current':'' ?>"><span>应用</span></a>
                     </li>
                     <li class="nav-sub-li">
-                        <a href="/android/subject.html" class="nav-sub-item " target="_self"><span>专题</span></a>
+                        <a href="/android/subject.html" class="nav-sub-item <?=$this->nav_name=='专题'?'nav-sub-item-current':'' ?>" target="_self"><span>专题</span></a>
                     </li>
                     <li class="nav-sub-li">
-                        <a href="/android/top.html" class="nav-sub-item " target="_self"><span>排行</span> </a>
+                        <a href="/android/top.html" class="nav-sub-item <?=$this->nav_name=='排行'?'nav-sub-item-current':'' ?>" target="_self"><span>排行</span> </a>
                     </li>
                 </ul>
             </div>
