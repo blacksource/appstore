@@ -4,7 +4,7 @@ p{ margin:0;}
 a{ color:#2b2b2b;}
 a:visited{ color:#83006f;}
 a:hover{ color:#ba2636; text-decoration: underline;}
-body{ font:normal 12px/1.75 "\5B8B\4F53",sans-serif; color:#2b2b2b; background-color:#F7F7F7;}
+body{ font:normal 12px/1.75 "\5B8B\4F53",sans-serif; color:#2b2b2b; background: url(/images/bg.jpg) repeat;}
 
 .yui3-js-enabled .yui3-overlay-loading { position:absolute; top:-1000em; left:-1000em;}
 .yui3-js-enabled .yui3-tabs-loading { visibility: hidden;}
@@ -538,10 +538,10 @@ body{ font:normal 12px/1.75 "\5B8B\4F53",sans-serif; color:#2b2b2b; background-c
 .price-new-h2, .price-new-h1{ display:inline-block; height:30px; line-height:30px; font-size:20px; font-family:SimHei; vertical-align: middle;}
 .price-new-h1 { font-size:30px;}
 
-.wrap { min-width:960px; background: url(http://img6.cache.netease.com/apps/v2/img/bg35.png) repeat-x 0 0;}
+.wrap { min-width:960px;}
 .header {text-align: left;}
 .header-c, .header-b { margin-right:auto; margin-left:auto; width:960px;}
-.header-c { height:60px; position: relative; z-index:2; background:url(/images/sp1.jpg) no-repeat 0 -760px;}
+.header-c { height:60px; position: relative; z-index:2; }
 .header-b { height:88px; width:968px; background:url(/images/sp1.jpg) no-repeat 0 -660px; position:relative; z-index:1;}
 
 .header-system, .header-login { position:absolute; top:24px; right:0;}
