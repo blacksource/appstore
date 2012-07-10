@@ -14,7 +14,7 @@ $(function(){
         var imgs = $(".slide-main .yui3-tabs-panel");
         var selected = $(".slide-main .yui3-tabs-panel-selected");
         var index = imgs.index(selected);
-        if(++index >= imgs.length -1)
+        if(++index >= imgs.length)
         {
             index = 0;
         }
@@ -32,7 +32,7 @@ $(function(){
         imgs.removeClass("yui3-tabs-panel-selected");
         var img = imgs.eq(index);
         img.addClass("yui3-tabs-panel-selected");
-        $(".slide-main .yui3-tabs-panel-selected").fadeIn();
+        $(".slide-main .yui3-tabs-panel-selected").show();
     }
 
    
@@ -59,12 +59,7 @@ $(function(){
         $(this).parent().find(".li-rank-bd").hide();
         $(this).find(".li-rank-bd").show();
     });
-
-    $(".li-rank").mouseover(function(){
-        $(".li-rank-bd").hide();
-        $(".li-rank-bd", this).show();
-    });
-
+    
 	$(".yui3-imagelist-arrow-left").click(function(){
             var width=206;
             var left = parseInt($("#shot-list").css("left").replace("px", ""));

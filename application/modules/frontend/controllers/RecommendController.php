@@ -17,13 +17,13 @@ class RecommendController extends Zend_Controller_Action
     	$this->view->totalPage = 0;
     	switch ($type) {
     		case 'install':
-    			$this->view->typeName = "装机";
+    			$this->view->typeName = "MM最爱";
     			break;
     		case 'game':
-    			$this->view->typeName = "游戏";
+    			$this->view->typeName = "游戏推荐";
     			break;
     		case 'new':
-    			$this->view->typeName = "新品";
+    			$this->view->typeName = "新品推荐";
     			break;
     		default:
     			# code...
