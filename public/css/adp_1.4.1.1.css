@@ -1300,10 +1300,10 @@ body{ font:normal 12px/1.75 "\5B8B\4F53",sans-serif; color:#2b2b2b; background: 
 /* shotViewer */
 .component-loading { text-align:center; height:16px; background:url(http://img4.cache.netease.com/apps/v2/img/loader1.gif) no-repeat center center;}
 .yui3-imagelist {}
-.container-shot-list { left:31px; width:607px; overflow:hidden; position:relative; height:300px;}
+.container-shot-list { left:28px; width:620px; overflow:hidden; position:relative; height:302px;}
 .shot-list { position:absolute; float:left; white-space:nowrap; left:0; top:0;}
-.shot-list li { height:300px; width:200px; margin-right:2px; overflow:hidden; display:inline-block; *zoom:1; *display:inline; border:1px solid #e6e6df;}
-.yui3-imagelist-arrow-left, .yui3-imagelist-arrow-right { position:absolute; top:0; height:142px; width:25px; display:block; cursor:pointer; background:url(/images/sp1.jpg) no-repeat;}
+.shot-list li { height:300px; width:200px; margin-right:-1px; overflow:hidden; display:inline-block; *zoom:1; *display:inline; border:1px solid #e6e6df;}
+.yui3-imagelist-arrow-left, .yui3-imagelist-arrow-right { position:absolute; top:0; height:142px; width:20px; display:block; cursor:pointer; background:url(/images/sp1.jpg) no-repeat;}
 .yui3-imagelist-arrow-left { left:0; background-position:-120px -500px;}
 .yui3-imagelist-arrow-right { right:0; background-position:-160px -500px;}
 .yui3-imagelist-arrow-left-disabled { background-position:-200px -500px;}
