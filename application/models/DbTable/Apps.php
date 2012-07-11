@@ -109,5 +109,20 @@ class Application_Model_DbTable_Apps extends Zend_Db_Table_Abstract
             ->limit($pageSize, ($page-1)*$pageSize);
         return $this->fetchAll($select);
     }
+
+    public function getAppByCategory($category_id, $limit)
+    {
+        $select = $this->select()
+            ->where('category_id = ?', $category_id)
+            ->limit($limit);
+        return $this->fetchAll($select);   
+    }
+
+    public function getByCategories($categories)
+    {
+        $select = $this->select()
+            ->where('category_id IN (?)', $categories);
+        return $this->fetchAll($select);
+    }
 }
 

@@ -7,13 +7,13 @@
         <!--游戏推荐-->
         <?= $this->partial('index/android/recommend_list.phtml', array('recommendType'=>'game', 'recommendName'=>'游戏推荐', 'apps'=>$this->recommend_games)); ?>
     </div>
-        <?php echo $this->partial('index/android/hot_list.phtml', array('hot_name'=>'热门游戏排行榜', 'hot_apps'=>$this->hot_games)); ?>
+        <?= $this->partial('index/android/hot_list.phtml', array('hot_name'=>'热门游戏排行榜', 'hot_apps'=>$this->hot_games)); ?>
 </div>
 <div class="sect m-t15">
     <div class="sect-main">
-    <?= $this->partial('index/android/recommend_list.phtml', array('recommendType'=>'new', 'recommendName'=>'新品推荐', 'apps'=>$this->recommend_installs)); ?>
+    <?= $this->partial('index/android/recommend_list.phtml', array('recommendType'=>'new', 'recommendName'=>'新品推荐', 'apps'=>$this->recommend_news)); ?>
         <div class="arti m-t15"></div>
-        <?php echo $this->partial('index/android/hot_category.phtml'); ?>
+        <?= $this->partial('index/android/hot_categories.phtml', array('hotCategories'=>$this->hot_categories)); ?>
     </div>
-    <?php echo $this->partial('index/android/hot_list.phtml', array('hot_name'=>'热门应用排行榜', 'hot_apps'=>$this->hot_apps)); ?>
+    <?= $this->partial('index/android/hot_list.phtml', array('hot_name'=>'热门应用排行榜', 'hot_apps'=>$this->hot_apps)); ?>
 </div>
