@@ -13,6 +13,7 @@ class Application_Model_DbTable_RecommendApps extends Zend_Db_Table_Abstract
             ->joinLeft(array('c'=>'categories'), 'a.category_id=c.id', array('category_name'=>'name'))
             ->joinLeft(array('r'=>'recommend_apps'), 'a.id=r.app_id', array('rid'=>'id'))
             ->where('r.type=?', $type)
+            ->order('r.recommend_count DESC')
             ->limit($limit);
         return $this->fetchAll($select);
     }
